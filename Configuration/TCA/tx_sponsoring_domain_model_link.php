@@ -135,7 +135,7 @@ return [
                                 'mode' => 'wizard'
                             ]
                         ],
-                        'title' => 'LLL:EXT:cms/locallang_ttc.xlf:header_link_formlabel',
+                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
                         'type' => 'popup',
                     ]
                 ],

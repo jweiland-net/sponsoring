@@ -230,7 +230,7 @@ return [
                     'minitems' => 0,
                     'maxitems' => 5,
                     'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                     ],
                     'foreign_types' => [
                         '0' => [
@@ -283,7 +283,7 @@ return [
                         'notNewRecords' => 1,
                         'RTEonly' => 1,
                         'type' => 'script',
-                        'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
+                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE',
                         'icon' => 'wizard_rte2.gif',
                         'module' => [
                             'name' => 'wizard_rte'
@@ -323,7 +323,7 @@ return [
                     'minitems' => 0,
                     'maxitems' => 10,
                     'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:media.addFileReference'
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
                     ]
                 ]
             )
