@@ -1,0 +1,120 @@
+{namespace maps2=JWeiland\Maps2\ViewHelpers}
+<f:layout name="Default"/>
+
+<f:section name="main">
+	<div class="grid_12 floatleft marginbottom"><h1>{project.name}</h1></div>
+	<div class="grid_12 clearer clearfix">
+		<div class="grid_6 floatleft">
+			<div class="gridright">
+				<f:if condition="{project.images->f:count()}">
+					<figure class="gridright marginbottom2">
+						<f:render partial="Project/Images" arguments="{project: project}" />
+					</figure>
+				</f:if>
+
+				<f:if condition="{project.description}">
+					<f:format.html>{project.description}</f:format.html>
+				</f:if>
+				&nbsp;
+			</div>
+		</div>
+
+		<div class="grid_6 floatleft">
+			<div class="gridleft clearfix rulerbefore4">
+				<dl class="extdl">
+					<f:render partial="Project/SingleLine" arguments="{field: 'number', value: project.number}" />
+					<f:if condition="{project.applicationDeadline}">
+						<dt>
+							<f:translate key="tx_sponsoring_domain_model_project.application_deadline" />
+							:
+						</dt>
+						<dd>{project.applicationDeadline -> f:format.date(format: 'd.m.Y')}</dd>
+					</f:if>
+					<f:if condition="{project.organizerType}">
+						<f:then>
+							<f:render partial="Project/SingleLine" arguments="{field: 'organizer', value: project.organizerManuell}" />
+						</f:then>
+						<f:else>
+							<f:if condition="{project.organisationseinheit}">
+								<dt><f:translate key="tx_sponsoring_domain_model_project.organizer"/>:</dt>
+								<dd><f:link.action pageUid="{settings.pidOfServiceBw2Page}" action="show" controller="Organisationseinheiten" pluginName="ServiceBw" extensionName="serviceBw2" arguments="{id: project.organisationseinheit.id}">{project.organisationseinheit.name}</f:link.action></dd>
+							</f:if>
+						</f:else>
+					</f:if>
+
+				</dl>
+				<dl class="extdl clearfix rulerafter">
+					<f:if condition="{project.contactPerson}">
+						<dt>
+							<f:translate key="tx_sponsoring_domain_model_project.contact_person" />:
+						</dt>
+						<dd class="noborder">{project.contactPerson}</dd>
+					</f:if>
+
+					<dd class="grid_8 floatleft noborder">
+						<f:if condition="{project.telephone}">
+							<span aria-hidden="true" class="icon-phone_pf"></span>{project.telephone}<br />
+						</f:if>
+						<f:if condition="{project.email}">
+							<span aria-hidden="true" class="icon-email"></span>
+							<f:link.email class="email" title="{project.email}" email="{project.email}">
+								<f:translate key="tx_sponsoring_domain_model_project.email"/>
+							</f:link.email>
+							<br/>
+						</f:if>
+					</dd>
+					<f:if condition="{project.txMaps2Uid}">
+						<dd class="grid_4 floatleft noborder">
+							<figure>
+								<f:link.action title="Map" action="show" controller="PoiCollection" extensionName="maps2" pluginName="maps2" pageUid="{settings.pidOfMaps2Plugin}" arguments="{poiCollection: project.txMaps2Uid}">
+									<f:image class="floatright" src="EXT:sponsoring/Resources/Public/Icons/thumbmaps.png" alt="{f:translate(key: 'altTextMapImg')}"/>
+								</f:link.action>
+							</figure>
+						</dd>
+					</f:if>
+				</dl>
+				<dl class="extdl">
+					<f:if condition="{project.promotion}">
+						<dt>Förderbereich:</dt>
+						<f:for each="{project.promotion}" as="promotion">
+							<dd>{promotion.title}</dd>
+						</f:for>
+					</f:if>
+					<f:if condition="{project.promotionType -> f:count()}">
+						<dt>
+							<f:translate key="tx_sponsoring_domain_model_project.promotion_type"/>:</dt>
+						<f:for each="{project.promotionType}" as="promotionType">
+							<dd>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_type.{promotionType}')}</dd>
+						</f:for>
+					</f:if>
+					<f:render partial="Project/SingleLine" arguments="{field: 'promotion_value', value: project.promotionValue}"/>
+
+					<f:if condition="{project.files}">
+						<dt>
+							<f:translate key="tx_sponsoring_domain_model_project.files"/>
+							:
+						</dt>
+						<f:for each="{project.files}" as="file">
+							<dd>
+								<f:link.external uri="{typo3RequestDir}{file.originalResource.publicUrl}">
+									{file.originalResource.originalFile.name}
+								</f:link.external>
+							</dd>
+						</f:for>
+					</f:if>
+					<f:if condition="{project.links}">
+						<dt>
+							<f:translate key="tx_sponsoring_domain_model_project.links"/>
+							:
+						</dt>
+						<f:for each="{project.links}" as="link">
+							<dd>
+								<f:link.external uri="{link.link}" target="_blank">{link.title}</f:link.external>
+							</dd>
+						</f:for>
+					</f:if>
+				</dl>
+			</div>
+		</div>
+	</div>
+</f:section>

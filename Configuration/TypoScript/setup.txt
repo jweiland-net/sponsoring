@@ -1,0 +1,34 @@
+plugin.tx_sponsoring {
+  view {
+    templateRootPaths.100 = {$plugin.tx_sponsoring.view.templateRootPath}
+    partialRootPaths.100 = {$plugin.tx_sponsoring.view.partialRootPath}
+    layoutRootPaths.100 = {$plugin.tx_sponsoring.view.layoutRootPath}
+  }
+
+  persistence {
+    storagePid = {$plugin.tx_sponsoring.persistence.storagePid}
+    classes {
+      JWeiland\Sponsoring\Domain\Model\Category {
+        mapping {
+          tableName = sys_category
+        }
+      }
+    }
+  }
+
+  settings {
+    pidOfMaps2Plugin = {$plugin.tx_sponsoring.settings.pidOfMaps2Plugin}
+    pidOfDetailPage = {$plugin.tx_sponsoring.settings.pidOfDetailPage}
+    pidOfServiceBw2Page = {$plugin.tx_sponsoring.settings.pidOfServiceBw2Page}
+    pageBrowser {
+      itemsPerPage = {$plugin.tx_sponsoring.settings.pageBrowser.itemsPerPage}
+      insertAbove = {$plugin.tx_sponsoring.settings.pageBrowser.insertAbove}
+      insertBelow = {$plugin.tx_sponsoring.settings.pageBrowser.insertBelow}
+      maximumNumberOfLinks = {$plugin.tx_sponsoring.settings.pageBrowser.maximumNumberOfLinks}
+    }
+  }
+
+  features {
+    requireCHashArgumentForActionArguments = 0
+  }
+}
