@@ -25,8 +25,7 @@
 					<f:render partial="Project/SingleLine" arguments="{field: 'number', value: project.number}" />
 					<f:if condition="{project.applicationDeadline}">
 						<dt>
-							<f:translate key="tx_sponsoring_domain_model_project.application_deadline" />
-							:
+							<f:translate key="tx_sponsoring_domain_model_project.application_deadline" />:
 						</dt>
 						<dd>{project.applicationDeadline -> f:format.date(format: 'd.m.Y')}</dd>
 					</f:if>
@@ -104,8 +103,7 @@
 					</f:if>
 					<f:if condition="{project.links}">
 						<dt>
-							<f:translate key="tx_sponsoring_domain_model_project.links"/>
-							:
+							<f:translate key="tx_sponsoring_domain_model_project.links"/>:
 						</dt>
 						<f:for each="{project.links}" as="link">
 							<dd>
