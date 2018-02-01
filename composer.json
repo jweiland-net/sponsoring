@@ -2,7 +2,7 @@
   "name": "jweiland/sponsoring",
   "type": "typo3-cms-extension",
   "description": "Display sponsoring projects",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "keywords": ["typo3", "TYPO3 CMS", "sponsoring"],
   "homepage": "http://www.jweiland.net",
   "authors": [
