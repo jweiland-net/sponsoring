@@ -26,7 +26,7 @@ class ExtConf implements SingletonInterface
     /**
      * root category
      *
-     * @var integer
+     * @var int
      */
     protected $rootCategory = 0;
 
@@ -51,7 +51,7 @@ class ExtConf implements SingletonInterface
     /**
      * getter for rootCategory
      *
-     * @return integer
+     * @return int
      */
     public function getRootCategory() {
         return $this->rootCategory;
@@ -60,10 +60,10 @@ class ExtConf implements SingletonInterface
     /**
      * setter for rootCategory
      *
-     * @param integer $rootCategory
+     * @param int $rootCategory
      * @return void
      */
-    public function setRootCategory($rootCategory) {
+    public function setRootCategory(int $rootCategory) {
         $this->rootCategory = (int)$rootCategory;
     }
 
