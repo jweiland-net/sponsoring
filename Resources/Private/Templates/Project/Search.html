@@ -7,16 +7,14 @@
       <f:form action="search" noCache="1" noCacheHash="1">
         <div class="marginbottom nobreakinside">
           <label class="width100">
-            <f:translate key="sortBy"/>
-            :</label>
+            <f:translate key="sortBy"/>:</label>
           <f:form.select class="width100" name="promotion" value="{promotion}" options="{sp:getPromotions()}"
                          optionLabelField="title" optionValueField="uid" prependOptionLabel="" prependOptionValue="0"
                          additionalAttributes="{onChange: 'this.form.submit()'}"/>
         </div>
         <div class="marginbottom nobreakinside">
           <label class="width100">
-            <f:translate key="ordering"/>
-            :</label>
+            <f:translate key="ordering"/>:</label>
           <f:form.select class="width100 marginbottom" name="sortBy" value="{sortBy}"
                          options="{name: '{f:translate(key: \'tx_sponsoring_domain_model_project.name\')}', application_deadline: '{f:translate(key: \'tx_sponsoring_domain_model_project.application_deadline\')}', promotion_value: '{f:translate(key: \'tx_sponsoring_domain_model_project.promotion_value\')}'}"
                          additionalAttributes="{onChange: 'this.form.submit()'}"/>
