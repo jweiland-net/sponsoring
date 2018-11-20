@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'JWeiland.' . $_EXTKEY,
+    'JWeiland.sponsoring',
     'Sponsoring',
     [
         'Project' => 'list, search, show',

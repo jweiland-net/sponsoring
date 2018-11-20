@@ -4,12 +4,12 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    $_EXTKEY,
+    'JWeiland.sponsoring',
     'Sponsoring',
     'Sponsoring'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Sponsoring');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('sponsoring', 'Configuration/TypoScript', 'Sponsoring');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_sponsoring_domain_model_project', 'EXT:sponsoring/Resources/Private/Language/locallang_csh_tx_sponsoring_domain_model_project.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_sponsoring_domain_model_project');
