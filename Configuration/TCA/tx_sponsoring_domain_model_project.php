@@ -8,9 +8,7 @@ return [
         'cruser_id' => 'cruser_id',
         'dividers2tabs' => true,
         'type' => 'organizer_type',
-        'versioningWS' => 2,
-        'versioning_followPages' => true,
-
+        'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -24,97 +22,129 @@ return [
         'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, tx_maps2_uid, files, links',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links',
     ],
     'types' => [
-        '0' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css], tx_maps2_uid, files, links, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, starttime, endtime'],
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, number, contact_person, telephone, email, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css], tx_maps2_uid, files, links, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, starttime, endtime'],
+        '0' => [
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css], files, links,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
+        ],
+        '1' => [
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css], files, links,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
+        ],
     ],
     'palettes' => [
-        '1' => ['showitem' => ''],
+        'access' => [
+            'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
+        ]
     ],
     'columns' => [
         'sys_language_uid' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
                 'type' => 'select',
-                'foreign_table' => 'sys_language',
-                'foreign_table_where' => 'ORDER BY sys_language.title',
+                'renderType' => 'selectSingle',
+                'special' => 'languages',
                 'items' => [
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
+                    [
+                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                        -1,
+                        'flags-multiple'
+                    ],
                 ],
-            ],
+                'default' => 0,
+            ]
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'exclude' => true,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [
                     ['', 0],
                 ],
                 'foreign_table' => 'tx_sponsoring_domain_model_project',
                 'foreign_table_where' => 'AND tx_sponsoring_domain_model_project.pid=###CURRENT_PID### AND tx_sponsoring_domain_model_project.sys_language_uid IN (-1,0)',
-            ],
+                'fieldWizard' => [
+                    'selectIcons' => [
+                        'disabled' => true,
+                    ],
+                ],
+                'default' => 0,
+            ]
         ],
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
-            ],
-        ],
-
-        't3ver_label' => [
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'max' => 255,
+                'default' => ''
             ]
         ],
-
         'hidden' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'exclude' => true,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-            ],
+                'default' => 0
+            ]
+        ],
+        'cruser_id' => [
+            'label' => 'cruser_id',
+            'config' => [
+                'type' => 'passthrough'
+            ]
+        ],
+        'pid' => [
+            'label' => 'pid',
+            'config' => [
+                'type' => 'passthrough'
+            ]
+        ],
+        'crdate' => [
+            'label' => 'crdate',
+            'config' => [
+                'type' => 'passthrough',
+            ]
+        ],
+        'tstamp' => [
+            'label' => 'tstamp',
+            'config' => [
+                'type' => 'passthrough',
+            ]
         ],
         'starttime' => [
-            'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel',
             'config' => [
                 'type' => 'input',
-                'size' => 13,
-                'max' => 20,
-                'eval' => 'datetime',
-                'checkbox' => 0,
+                'renderType' => 'inputDateTime',
+                'size' => 16,
+                'eval' => 'datetime,int',
                 'default' => 0,
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
                 ],
-            ],
+            ]
         ],
         'endtime' => [
-            'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
             'config' => [
                 'type' => 'input',
-                'size' => 13,
-                'max' => 20,
-                'eval' => 'datetime',
-                'checkbox' => 0,
+                'renderType' => 'inputDateTime',
+                'size' => 16,
+                'eval' => 'datetime,int',
                 'default' => 0,
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
                 ],
-            ],
+            ]
         ],
-
         'name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.name',
@@ -274,45 +304,12 @@ return [
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.description',
             'config' => [
                 'type' => 'text',
-                'cols' => '80',
-                'rows' => '15',
-                'wizards' => [
-                    '_PADDING' => 4,
-                    '_VALIGN' => 'middle',
-                    'RTE' => [
-                        'notNewRecords' => 1,
-                        'RTEonly' => 1,
-                        'type' => 'script',
-                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE',
-                        'icon' => 'wizard_rte2.gif',
-                        'module' => [
-                            'name' => 'wizard_rte'
-                        ]
-                    ],
-                ],
-                'softref' => 'typolink_tag,images,email[subst],url',
+                'cols' => 40,
+                'rows' => 15,
+                'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
             ]
-        ],
-        'tx_maps2_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:maps2/Resources/Private/Language/locallang_db.xlf:tx_maps2_uid',
-            'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'tx_maps2_domain_model_poicollection',
-                'prepend_tname' => false,
-                'show_thumbs' => false,
-                'size' => 1,
-                'maxitems' => 1,
-                'wizards' => [
-                    'suggest' => [
-                        'type' => 'suggest',
-                        'default' => [
-                            'searchWholePhrase' => true
-                        ],
-                    ],
-                ],
-            ],
         ],
         'files' => [
             'exclude' => 1,
