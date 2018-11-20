@@ -9,7 +9,7 @@ return [
         'dividers2tabs' => true,
         'hideTable' => true,
         'default_sortby' => 'ORDER BY title',
-        'versioningWS' => 1,
+        'versioningWS' => true,
         'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',

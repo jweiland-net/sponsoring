@@ -26,12 +26,12 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css], files, links,
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
         ],
         '1' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css], files, links,
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
         ],
@@ -218,8 +218,9 @@ return [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.application_deadline',
             'config' => [
-                'dbType' => 'date',
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
+                'dbType' => 'date',
                 'size' => 7,
                 'eval' => 'date',
                 'checkbox' => 0,
@@ -231,6 +232,7 @@ return [
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'size' => 5,
                 'minitems' => 0,
                 'maxitems' => 99,
@@ -262,38 +264,40 @@ return [
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                     ],
-                    'foreign_types' => [
-                        '0' => [
-                            'showitem' => '
+                    'overrideChildTca' => [
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                             --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                            'showitem' => '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                                'showitem' => '
                             --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                            'showitem' => '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
                             --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                            'showitem' => '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                                'showitem' => '
                             --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                            'showitem' => '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                'showitem' => '
                             --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                            'showitem' => '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                                'showitem' => '
                             --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette'
+                            ]
                         ]
-                    ]
+                    ],
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
