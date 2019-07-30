@@ -90,5 +90,11 @@ CREATE TABLE tx_sponsoring_domain_model_link (
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
 	KEY language (l10n_parent,sys_language_uid)
+);
 
+#
+# Table structure for table 'sys_category'
+#
+CREATE TABLE sys_category (
+	icon varchar(255) DEFAULT '' NOT NULL
 );

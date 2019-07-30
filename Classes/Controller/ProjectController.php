@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\Controller;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -20,23 +21,17 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 
 /**
- * ProjectController
+ * Main controller to list and show projects
  */
 class ProjectController extends ActionController
 {
-
     /**
-     * projectRepository
-     *
      * @var ProjectRepository
      */
     protected $projectRepository;
 
     /**
-     * inject projectRepository
-     *
      * @param ProjectRepository $projectRepository
-     * @return void
      */
     public function injectProjectRepository(ProjectRepository $projectRepository)
     {
@@ -44,9 +39,7 @@ class ProjectController extends ActionController
     }
 
     /**
-     * preprocessing of all actions
-     *
-     * @return void
+     * Pre-Processing of all actions
      */
     public function initializeAction()
     {
@@ -58,9 +51,7 @@ class ProjectController extends ActionController
     }
 
     /**
-     * add some default variables to fluid templates
-     *
-     * @return void
+     * Add some default variables to fluid templates
      */
     public function initializeView(ViewInterface $view)
     {
@@ -68,9 +59,7 @@ class ProjectController extends ActionController
     }
 
     /**
-     * action list
-     *
-     * @return void
+     * Action list
      */
     public function listAction()
     {
@@ -79,14 +68,13 @@ class ProjectController extends ActionController
     }
 
     /**
-     * action search
+     * Action search
      *
-     * @param integer $promotion
+     * @param int $promotion
      * @param string $sortBy
      * @param string $direction
      * @validate $sortBy RegularExpression(regularExpression=/name|application_deadline|promotion_value/)
      * @validate $direction RegularExpression(regularExpression=/ASC|DESC/)
-     * @return void
      */
     public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC')
     {
@@ -98,14 +86,12 @@ class ProjectController extends ActionController
     }
 
     /**
-     * action show
+     * Action show
      *
      * @param int $project
-     * @return void
      */
     public function showAction(int $project)
     {
         $this->view->assign('project', $this->projectRepository->findByIdentifier($project));
     }
-
 }

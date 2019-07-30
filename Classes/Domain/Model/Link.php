@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\Domain\Model;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -17,37 +18,29 @@ namespace JWeiland\Sponsoring\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Projects
+ * Domain model for links which are related to the project model
  */
-class Link extends AbstractEntity {
-
+class Link extends AbstractEntity
+{
     /**
-     * Link
-     *
      * @var string
      */
     protected $link = '';
 
     /**
-     * Title
-     *
      * @var string
      */
     protected $title = 'Video';
 
     /**
-     * Returns Link
-     *
      * @return string
      */
-    public function getLink()
+    public function getLink(): string
     {
         return $this->link;
     }
 
     /**
-     * Sets Link
-     *
      * @param string $link
      */
     public function setLink(string $link)
@@ -56,18 +49,14 @@ class Link extends AbstractEntity {
     }
 
     /**
-     * Returns Title
-     *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * Sets Title
-     *
      * @param string $title
      */
     public function setTitle(string $title)

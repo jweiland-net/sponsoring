@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\Domain\Repository;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -14,31 +15,32 @@ namespace JWeiland\Sponsoring\Domain\Repository;
  * The TYPO3 project - inspiring people to share!
  */
 
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for Projects
+ * Main repository to find and fetch projects
  */
 class ProjectRepository extends Repository
 {
-
     /**
-     * find all records sorted by given parameters
+     * Find all project records sorted by given parameters
      *
      * @param string $promotion
      * @param string $sortBy
      * @param string $direction
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return QueryResultInterface
      */
-    public function findAllSorted(string $promotion, string $sortBy = 'name', string $direction = 'ASC')
+    public function findAllSorted(string $promotion, string $sortBy = 'name', string $direction = 'ASC'): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->setOrderings([
             $sortBy => $direction
         ]);
+
         $constraints = [];
 
-        // add promotion filter
+        // Add promotion filter
         if (!empty($promotion)) {
             $constraints = $query->contains('promotion', $promotion);
         }

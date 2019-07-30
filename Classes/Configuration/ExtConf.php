@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\Configuration;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -17,54 +18,48 @@ namespace JWeiland\Sponsoring\Configuration;
 use TYPO3\CMS\Core\SingletonInterface;
 
 /**
- * @package masterplan
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ * This class will streamline the values from extension manager configuration
  */
 class ExtConf implements SingletonInterface
 {
-
     /**
-     * root category
-     *
      * @var int
      */
     protected $rootCategory = 0;
 
-    /**
-     * constructor of this class
-     * This method reads the global configuration and calls the setter methods
-     */
-    public function __construct() {
-        // get global configuration
-        $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sponsoring']);
-        if (is_array($extConf) && count($extConf)) {
-            // call setter method foreach configuration entry
-            foreach($extConf as $key => $value) {
-                $methodName = 'set' . ucfirst($key);
-                if (method_exists($this, $methodName)) {
-                    $this->$methodName($value);
+    public function __construct()
+    {
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sponsoring'])) {
+            // get global configuration
+            $extConf = unserialize(
+                $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sponsoring'],
+                ['allowed_classes' => false]
+            );
+            if (is_array($extConf) && count($extConf)) {
+                // call setter method foreach configuration entry
+                foreach($extConf as $key => $value) {
+                    $methodName = 'set' . ucfirst($key);
+                    if (method_exists($this, $methodName)) {
+                        $this->$methodName($value);
+                    }
                 }
             }
         }
     }
 
     /**
-     * getter for rootCategory
-     *
      * @return int
      */
-    public function getRootCategory() {
+    public function getRootCategory(): int
+    {
         return $this->rootCategory;
     }
 
     /**
-     * setter for rootCategory
-     *
      * @param int $rootCategory
-     * @return void
      */
-    public function setRootCategory(int $rootCategory) {
+    public function setRootCategory(int $rootCategory)
+    {
         $this->rootCategory = (int)$rootCategory;
     }
-
 }
