@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\Domain\Model;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -15,9 +16,34 @@ namespace JWeiland\Sponsoring\Domain\Model;
  */
 
 /**
- * @package sponsoring
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ * Domain model for categories.
+ *
+ * As TYPO3 does not come with TCA nor with a SQL entry, it is not save
+ * to use the icon setter/getter of extbase. Maybe they will be removed
+ * in future.
  */
-class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {
+class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
+{
+    /**
+     * @var string
+     */
+    protected $icon = '';
 
+    /**
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * Sets the icon
+     *
+     * @param string $icon
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = (string)$icon;
+    }
 }

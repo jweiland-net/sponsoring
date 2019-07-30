@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\Domain\Model;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -14,54 +15,43 @@ namespace JWeiland\Sponsoring\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Projects
+ * Main domain model for projects
  */
 class Project extends AbstractEntity
 {
     /**
-     * name
-     *
      * @var string
      */
     protected $name = '';
 
     /**
-     * number
-     *
      * @var string
      */
     protected $number = '';
 
     /**
-     * contactPerson
-     *
      * @var string
      */
     protected $contactPerson = '';
 
     /**
-     * telephone
-     *
      * @var string
      */
     protected $telephone = '';
 
     /**
-     * email
-     *
      * @var string
      */
     protected $email = '';
 
     /**
-     * organizerType
-     *
      * @var bool
      */
     protected $organizerType = false;
@@ -75,78 +65,55 @@ class Project extends AbstractEntity
     protected $organisationseinheit = 0;
 
     /**
-     * organizerManuell
-     *
      * @var string
      */
     protected $organizerManuell = '';
 
     /**
-     * applicationDeadline
-     *
      * @var \DateTime
      */
     protected $applicationDeadline;
 
     /**
-     * promotion
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Sponsoring\Domain\Model\Category>
      */
     protected $promotion;
 
     /**
-     * promotionType
-     *
      * @var string
      */
     protected $promotionType = '';
 
     /**
-     * promotionValue
-     *
      * @var string
      */
     protected $promotionValue = '';
 
     /**
-     * images
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $images;
 
     /**
-     * description
-     *
      * @var string
      */
     protected $description = '';
 
     /**
-     * TxMaps2Uid
-     *
      * @var \JWeiland\Maps2\Domain\Model\PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * files
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $files;
 
     /**
-     * links
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Sponsoring\Domain\Model\Link>
      */
     protected $links;
 
-    /**
-     * __construct
-     */
     public function __construct()
     {
         $this->initStorageObjects();
@@ -154,8 +121,6 @@ class Project extends AbstractEntity
 
     /**
      * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
-     *
-     * @return void
      */
     protected function initStorageObjects()
     {
@@ -166,8 +131,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Organisationseinheit
-     *
      * @return array
      */
     public function getOrganisationseinheit(): array
@@ -176,8 +139,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Organisationseinheit
-     *
      * @param array $organisationseinheit
      */
     public function setOrganisationseinheit(array $organisationseinheit)
@@ -192,7 +153,7 @@ class Project extends AbstractEntity
      *
      * @return string
      */
-    public function getOrganizer()
+    public function getOrganizer(): string
     {
         if ($this->organizerType) {
             // get manually given organizer
@@ -206,18 +167,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Name
-     *
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * Sets Name
-     *
      * @param string $name
      */
     public function setName(string $name)
@@ -226,18 +183,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Number
-     *
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): string
     {
         return $this->number;
     }
 
     /**
-     * Sets Number
-     *
      * @param string $number
      */
     public function setNumber(string $number)
@@ -246,8 +199,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns ContactPerson
-     *
      * @return string
      */
     public function getContactPerson(): string
@@ -256,8 +207,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets ContactPerson
-     *
      * @param string $contactPerson
      */
     public function setContactPerson(string $contactPerson)
@@ -266,18 +215,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Telephone
-     *
      * @return string
      */
-    public function getTelephone()
+    public function getTelephone(): string
     {
         return $this->telephone;
     }
 
     /**
-     * Sets Telephone
-     *
      * @param string $telephone
      */
     public function setTelephone(string $telephone)
@@ -286,18 +231,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Email
-     *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 
     /**
-     * Sets Email
-     *
      * @param string $email
      */
     public function setEmail(string $email)
@@ -306,8 +247,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns OrganizerType
-     *
      * @return bool
      */
     public function isOrganizerType(): bool
@@ -316,8 +255,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets OrganizerType
-     *
      * @param bool $organizerType
      */
     public function setOrganizerType(bool $organizerType)
@@ -326,8 +263,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns OrganizerManuell
-     *
      * @return string
      */
     public function getOrganizerManuell(): string
@@ -336,8 +271,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets OrganizerManuell
-     *
      * @param string $organizerManuell
      */
     public function setOrganizerManuell(string $organizerManuell)
@@ -346,9 +279,7 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns ApplicationDeadline
-     *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getApplicationDeadline()
     {
@@ -356,18 +287,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets ApplicationDeadline
-     *
-     * @param \DateTime $applicationDeadline
+     * @param \DateTime|null $applicationDeadline
      */
-    public function setApplicationDeadline(\DateTime $applicationDeadline)
+    public function setApplicationDeadline(\DateTime $applicationDeadline = null)
     {
         $this->applicationDeadline = $applicationDeadline;
     }
 
     /**
-     * Returns Promotion
-     *
      * @return ObjectStorage
      */
     public function getPromotion(): ObjectStorage
@@ -376,8 +303,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Promotion
-     *
      * @param ObjectStorage $promotion
      */
     public function setPromotion(ObjectStorage $promotion)
@@ -386,8 +311,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns PromotionType
-     *
      * @return array
      */
     public function getPromotionType(): array
@@ -396,8 +319,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets PromotionType
-     *
      * @param string $promotionType
      */
     public function setPromotionType(string $promotionType)
@@ -406,18 +327,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns PromotionValue
-     *
      * @return string
      */
-    public function getPromotionValue()
+    public function getPromotionValue(): string
     {
         return $this->promotionValue;
     }
 
     /**
-     * Sets PromotionValue
-     *
      * @param string $promotionValue
      */
     public function setPromotionValue(string $promotionValue)
@@ -426,8 +343,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Images
-     *
      * @return ObjectStorage
      */
     public function getImages(): ObjectStorage
@@ -436,8 +351,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Images
-     *
      * @param ObjectStorage $images
      */
     public function setImages(ObjectStorage $images)
@@ -446,8 +359,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Description
-     *
      * @return string
      */
     public function getDescription(): string
@@ -456,8 +367,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Description
-     *
      * @param string $description
      */
     public function setDescription(string $description)
@@ -466,9 +375,7 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns TxMaps2Uid
-     *
-     * @return \JWeiland\Maps2\Domain\Model\PoiCollection|null
+     * @return PoiCollection|null
      */
     public function getTxMaps2Uid()
     {
@@ -476,18 +383,14 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets TxMaps2Uid
-     *
-     * @param \JWeiland\Maps2\Domain\Model\PoiCollection $txMaps2Uid
+     * @param PoiCollection $txMaps2Uid
      */
-    public function setTxMaps2Uid(\JWeiland\Maps2\Domain\Model\PoiCollection $txMaps2Uid)
+    public function setTxMaps2Uid(PoiCollection $txMaps2Uid)
     {
         $this->txMaps2Uid = $txMaps2Uid;
     }
 
     /**
-     * Returns Files
-     *
      * @return ObjectStorage
      */
     public function getFiles(): ObjectStorage
@@ -496,8 +399,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Files
-     *
      * @param ObjectStorage $files
      */
     public function setFiles(ObjectStorage $files)
@@ -506,8 +407,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Links
-     *
      * @return ObjectStorage
      */
     public function getLinks(): ObjectStorage
@@ -516,8 +415,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Links
-     *
      * @param ObjectStorage $links
      */
     public function setLinks(ObjectStorage $links)

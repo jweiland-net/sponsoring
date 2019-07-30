@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Sponsoring\ViewHelpers;
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the sponsoring project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -14,13 +15,13 @@ namespace JWeiland\Sponsoring\ViewHelpers;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * A ViewHelper to get a sorting array
+ * A ViewHelper to get direct child categories of defined root category in ExtConf
  */
-class GetPromotionsViewHelper extends AbstractViewHelper {
-
+class GetPromotionsViewHelper extends AbstractViewHelper
+{
     /**
      * @var \JWeiland\Sponsoring\Domain\Repository\CategoryRepository
      */
@@ -32,10 +33,7 @@ class GetPromotionsViewHelper extends AbstractViewHelper {
     protected $extConf;
 
     /**
-     * inject category repository
-     *
      * @param \JWeiland\Sponsoring\Domain\Repository\CategoryRepository $categoryRepository
-     * @return void
      */
     public function injectCategoryRepository(\JWeiland\Sponsoring\Domain\Repository\CategoryRepository $categoryRepository)
     {
@@ -43,10 +41,7 @@ class GetPromotionsViewHelper extends AbstractViewHelper {
     }
 
     /**
-     * inject extension configuration
-     *
      * @param \JWeiland\Sponsoring\Configuration\ExtConf $extConf
-     * @return void
      */
     public function injectExtConf(\JWeiland\Sponsoring\Configuration\ExtConf $extConf)
     {
@@ -54,7 +49,7 @@ class GetPromotionsViewHelper extends AbstractViewHelper {
     }
 
     /**
-     * get direct child categories of defined root category in extConf
+     * Get direct child categories of defined root category in extConf
      *
      * @return array
      */
@@ -66,7 +61,7 @@ class GetPromotionsViewHelper extends AbstractViewHelper {
         $categoryResult = $this->categoryRepository->findByParent($rootCategory);
         // we need an Array as collection for usort and not an ObjectStorage
         $categories = $categoryResult->toArray();
+
         return $categories;
     }
-
 }
