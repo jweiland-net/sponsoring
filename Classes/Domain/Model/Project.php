@@ -18,6 +18,7 @@ namespace JWeiland\Sponsoring\Domain\Model;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -311,6 +312,22 @@ class Project extends AbstractEntity
     }
 
     /**
+     * @param Category $promotion
+     */
+    public function addPromotion(Category $promotion)
+    {
+        $this->promotion->attach($promotion);
+    }
+
+    /**
+     * @param Category $promotion
+     */
+    public function removePromotion(Category $promotion)
+    {
+        $this->promotion->detach($promotion);
+    }
+
+    /**
      * @return array
      */
     public function getPromotionType(): array
@@ -356,6 +373,22 @@ class Project extends AbstractEntity
     public function setImages(ObjectStorage $images)
     {
         $this->images = $images;
+    }
+
+    /**
+     * @param FileReference $image
+     */
+    public function addImage(FileReference $image)
+    {
+        $this->images->attach($image);
+    }
+
+    /**
+     * @param FileReference $image
+     */
+    public function removeImage(FileReference $image)
+    {
+        $this->images->detach($image);
     }
 
     /**
@@ -407,6 +440,22 @@ class Project extends AbstractEntity
     }
 
     /**
+     * @param FileReference $file
+     */
+    public function addFile(FileReference $file)
+    {
+        $this->files->attach($file);
+    }
+
+    /**
+     * @param FileReference $file
+     */
+    public function removeFile(FileReference $file)
+    {
+        $this->files->detach($file);
+    }
+
+    /**
      * @return ObjectStorage
      */
     public function getLinks(): ObjectStorage
@@ -420,5 +469,21 @@ class Project extends AbstractEntity
     public function setLinks(ObjectStorage $links)
     {
         $this->links = $links;
+    }
+
+    /**
+     * @param Link $link
+     */
+    public function addLink(Link $link)
+    {
+        $this->links->attach($link);
+    }
+
+    /**
+     * @param Link $link
+     */
+    public function removeLink(Link $link)
+    {
+        $this->links->detach($link);
     }
 }
