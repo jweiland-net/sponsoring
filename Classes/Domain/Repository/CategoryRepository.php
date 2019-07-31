@@ -20,13 +20,12 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 /**
  * Our own Repository for Categories (sys_category) because we need another sorting
  */
-class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
-
+class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository
+{
     /**
      * @var array
      */
     protected $defaultOrderings = [
         'title' => QueryInterface::ORDER_ASCENDING
     ];
-
 }

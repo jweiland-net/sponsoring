@@ -28,11 +28,13 @@ class LinkTest extends UnitTestCase
      */
     protected $subject;
 
-    protected function setUp() {
+    protected function setUp()
+    {
         $this->subject = new Link();
     }
 
-    protected function tearDown() {
+    protected function tearDown()
+    {
         unset($this->subject);
     }
 
