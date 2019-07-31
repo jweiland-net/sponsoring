@@ -37,7 +37,7 @@ class ExtConf implements SingletonInterface
             );
             if (is_array($extConf) && count($extConf)) {
                 // call setter method foreach configuration entry
-                foreach($extConf as $key => $value) {
+                foreach ($extConf as $key => $value) {
                     $methodName = 'set' . ucfirst($key);
                     if (method_exists($this, $methodName)) {
                         $this->$methodName($value);

@@ -33,11 +33,13 @@ class ProjectTest extends UnitTestCase
      */
     protected $subject;
 
-    protected function setUp() {
+    protected function setUp()
+    {
         $this->subject = new Project();
     }
 
-    protected function tearDown() {
+    protected function tearDown()
+    {
         unset($this->subject);
     }
 
