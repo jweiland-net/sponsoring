@@ -1,30 +1,51 @@
 {
-  "name": "jweiland/sponsoring",
-  "type": "typo3-cms-extension",
-  "description": "Display sponsoring projects",
-  "license": "GPL-2.0-or-later",
-  "keywords": ["typo3", "TYPO3 CMS", "sponsoring"],
-  "homepage": "http://www.jweiland.net",
-  "authors": [
-    {
-      "name": "Stefan Froemken",
-      "email": "projects@jweiland.net",
-      "role": "Developer"
-    }
-  ],
-  "support": {
-    "email": "projects@jweiland.net",
-    "issues": "https://github.com/jweiland-net/sponsoring/issues",
-    "source": "https://github.com/jweiland-net/sponsoring"
-  },
-  "require": {
-    "typo3/cms-core": "^8.7 || ^9.5",
-    "jweiland/maps2": "^5.0",
-    "jweiland/service-bw2": "^2.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "JWeiland\\Sponsoring\\": "Classes"
-    }
-  }
+	"name": "jweiland/sponsoring",
+	"type": "typo3-cms-extension",
+	"description": "Display sponsoring projects",
+	"license": "GPL-2.0-or-later",
+	"keywords": ["typo3", "TYPO3 CMS", "sponsoring"],
+	"homepage": "http://www.jweiland.net",
+	"authors": [
+		{
+			"name": "Stefan Froemken",
+			"email": "projects@jweiland.net",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "projects@jweiland.net",
+		"issues": "https://github.com/jweiland-net/sponsoring/issues",
+		"source": "https://github.com/jweiland-net/sponsoring"
+	},
+	"require": {
+		"typo3/cms-core": "^8.7 || ^9.5",
+		"jweiland/maps2": "^5.0",
+		"jweiland/service-bw2": "^2.0"
+	},
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^2.0",
+		"nimut/testing-framework": "^4.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"JWeiland\\Sponsoring\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"JWeiland\\Sponsoring\\Tests\\": "Tests"
+		}
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "sponsoring",
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"app-dir": ".Build",
+			"web-dir": ".Build/public"
+		}
+	}
 }
