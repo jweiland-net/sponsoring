@@ -1,6 +1,6 @@
 <?php
 
-call_user_func(function ($extConf) {
+call_user_func(function () {
     // Add tx_maps2_uid column to project table
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
         \JWeiland\Maps2\Tca\Maps2Registry::getInstance()->add(
@@ -8,6 +8,11 @@ call_user_func(function ($extConf) {
             'tx_sponsoring_domain_model_project'
         );
     }
+
+    // Get and build extConf
+    $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+        \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+    );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
         'sponsoring',
@@ -17,11 +22,11 @@ call_user_func(function ($extConf) {
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion',
             'fieldConfiguration' => [
                 'treeConfig' => [
-                    'rootUid' => $extConf['rootCategory']
+                    'rootUid' => $extensionConfiguration->get('sponsoring', 'rootCategory')
                 ]
             ],
             'fieldList' => 'promotion', // prevent creating a category tab
             'position' => 'before:promotion_type'
         ]
     );
-}, unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sponsoring']));
+});
