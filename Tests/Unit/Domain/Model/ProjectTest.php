@@ -1,19 +1,13 @@
 <?php
 
-namespace JWeiland\Sponsoring\Tests\Unit\Domain\Model;
-
 /*
- * This file is part of the sponsoring project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/sponsoring.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Sponsoring\Tests\Unit\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Sponsoring\Domain\Model\Category;
