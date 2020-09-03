@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\ViewHelpers;
 
+use JWeiland\Sponsoring\Configuration\ExtConf;
+use JWeiland\Sponsoring\Domain\Repository\CategoryRepository;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -19,28 +21,18 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class GetPromotionsViewHelper extends AbstractViewHelper
 {
     /**
-     * @var \JWeiland\Sponsoring\Domain\Repository\CategoryRepository
+     * @var CategoryRepository
      */
     protected $categoryRepository;
 
     /**
-     * @var \JWeiland\Sponsoring\Configuration\ExtConf;
+     * @var ExtConf;
      */
     protected $extConf;
 
-    /**
-     * @param \JWeiland\Sponsoring\Domain\Repository\CategoryRepository $categoryRepository
-     */
-    public function injectCategoryRepository(\JWeiland\Sponsoring\Domain\Repository\CategoryRepository $categoryRepository)
+    public function __construct(CategoryRepository $categoryRepository, ExtConf $extConf)
     {
         $this->categoryRepository = $categoryRepository;
-    }
-
-    /**
-     * @param \JWeiland\Sponsoring\Configuration\ExtConf $extConf
-     */
-    public function injectExtConf(\JWeiland\Sponsoring\Configuration\ExtConf $extConf)
-    {
         $this->extConf = $extConf;
     }
 
@@ -51,13 +43,13 @@ class GetPromotionsViewHelper extends AbstractViewHelper
      */
     public function render(): array
     {
-        $rootCategory = (int)$this->extConf->getRootCategory();
         // make sure to have only categories which are direct children of rootCategory
+        $rootCategory = (int)$this->extConf->getRootCategory();
+
         /** @var \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult $categoryResult */
         $categoryResult = $this->categoryRepository->findByParent($rootCategory);
-        // we need an Array as collection for usort and not an ObjectStorage
-        $categories = $categoryResult->toArray();
 
-        return $categories;
+        // we need an Array as collection for usort and not an ObjectStorage
+        return $categoryResult->toArray();
     }
 }

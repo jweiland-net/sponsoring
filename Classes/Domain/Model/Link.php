@@ -28,33 +28,21 @@ class Link extends AbstractEntity
      */
     protected $title = 'Video';
 
-    /**
-     * @return string
-     */
     public function getLink(): string
     {
         return $this->link;
     }
 
-    /**
-     * @param string $link
-     */
     public function setLink(string $link)
     {
         $this->link = $link;
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title)
     {
         $this->title = $title;
