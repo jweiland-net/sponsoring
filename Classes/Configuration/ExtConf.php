@@ -15,7 +15,9 @@ namespace JWeiland\Sponsoring\Configuration;
  * The TYPO3 project - inspiring people to share!
  */
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * This class will streamline the values from extension manager configuration
@@ -29,35 +31,24 @@ class ExtConf implements SingletonInterface
 
     public function __construct()
     {
-        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sponsoring'])) {
-            // get global configuration
-            $extConf = unserialize(
-                $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sponsoring'],
-                ['allowed_classes' => false]
-            );
-            if (is_array($extConf) && count($extConf)) {
-                // call setter method foreach configuration entry
-                foreach ($extConf as $key => $value) {
-                    $methodName = 'set' . ucfirst($key);
-                    if (method_exists($this, $methodName)) {
-                        $this->$methodName($value);
-                    }
+        // get global configuration
+        $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('sponsoring');
+        if (is_array($extConf) && count($extConf)) {
+            // call setter method foreach configuration entry
+            foreach ($extConf as $key => $value) {
+                $methodName = 'set' . ucfirst($key);
+                if (method_exists($this, $methodName)) {
+                    $this->$methodName($value);
                 }
             }
         }
     }
 
-    /**
-     * @return int
-     */
     public function getRootCategory(): int
     {
         return $this->rootCategory;
     }
 
-    /**
-     * @param int $rootCategory
-     */
     public function setRootCategory($rootCategory)
     {
         $this->rootCategory = (int)$rootCategory;
