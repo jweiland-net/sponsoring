@@ -1,32 +1,46 @@
-{namespace sp=JWeiland\Sponsoring\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:sp="http://typo3.org/ns/JWeiland/Sponsoring/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
 <f:layout name="Default"/>
 
 <f:section name="main">
-  <aside class="floatright grid_4">
-    <div class="gridleft">
-      <f:form action="search" noCache="1" noCacheHash="1">
-        <div class="marginbottom nobreakinside">
-          <label class="width100">
-            <f:translate key="sortBy"/>:</label>
-          <f:form.select class="width100" name="promotion" value="{promotion}" options="{sp:getPromotions()}"
-                         optionLabelField="title" optionValueField="uid" prependOptionLabel="" prependOptionValue="0"
-                         additionalAttributes="{onChange: 'this.form.submit()'}"/>
-        </div>
-        <div class="marginbottom nobreakinside">
-          <label class="width100">
-            <f:translate key="ordering"/>:</label>
-          <f:form.select class="width100 marginbottom" name="sortBy" value="{sortBy}"
-                         options="{name: '{f:translate(key: \'tx_sponsoring_domain_model_project.name\')}', application_deadline: '{f:translate(key: \'tx_sponsoring_domain_model_project.application_deadline\')}', promotion_value: '{f:translate(key: \'tx_sponsoring_domain_model_project.promotion_value\')}'}"
-                         additionalAttributes="{onChange: 'this.form.submit()'}"/>
-          <f:form.select class="width100" name="direction" value="{direction}"
-                         options="{ASC: '{f:translate(key: \'asc\')}', DESC: '{f:translate(key: \'desc\')}'}"
-                         additionalAttributes="{onChange: 'this.form.submit()'}"/>
-        </div>
-      </f:form>
-    </div>
-  </aside>
+	<aside class="floatright grid_4">
+		<div class="gridleft">
+			<f:form action="search" noCache="1" noCacheHash="1">
+				<div class="marginbottom nobreakinside">
+					<label class="width100">{f:translate(key: 'sortBy')}:</label>
+					<f:form.select class="width100"
+												 name="promotion"
+												 value="{promotion}"
+												 options="{sp:getPromotions()}"
+												 optionLabelField="title"
+												 optionValueField="uid"
+												 prependOptionLabel=""
+												 prependOptionValue="0"
+												 additionalAttributes="{onChange: 'this.form.submit()'}" />
+				</div>
 
-  <div class="list scroll-container floatleft grid_8">
-    <f:render partial="Project/List" arguments="{projects: projects}"/>
-  </div>
+				<div class="marginbottom nobreakinside">
+					<label class="width100">{f:translate(key: 'ordering')}:</label>
+					<f:form.select class="width100 marginbottom"
+												 name="sortBy"
+												 value="{sortBy}"
+												 options="{name: '{f:translate(key: \'tx_sponsoring_domain_model_project.name\')}', application_deadline: '{f:translate(key: \'tx_sponsoring_domain_model_project.application_deadline\')}', promotion_value: '{f:translate(key: \'tx_sponsoring_domain_model_project.promotion_value\')}'}"
+												 additionalAttributes="{onChange: 'this.form.submit()'}" />
+
+					<f:form.select class="width100"
+												 name="direction"
+												 value="{direction}"
+												 options="{ASC: '{f:translate(key: \'asc\')}', DESC: '{f:translate(key: \'desc\')}'}"
+												 additionalAttributes="{onChange: 'this.form.submit()'}" />
+				</div>
+			</f:form>
+		</div>
+	</aside>
+
+	<div class="list scroll-container floatleft grid_8">
+		<f:render partial="Project/List" arguments="{projects: projects}" />
+	</div>
 </f:section>
+</html>
