@@ -124,7 +124,7 @@ class Project extends AbstractEntity
         return $this->organisationseinheit = ModelUtility::getOrganisationseinheit($this->organisationseinheit);
     }
 
-    public function setOrganisationseinheit(array $organisationseinheit)
+    public function setOrganisationseinheit(array $organisationseinheit): void
     {
         $this->organisationseinheit = $organisationseinheit;
     }
@@ -149,322 +149,202 @@ class Project extends AbstractEntity
         return '';
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getNumber(): string
     {
         return $this->number;
     }
 
-    /**
-     * @param string $number
-     */
-    public function setNumber(string $number)
+    public function setNumber(string $number): void
     {
         $this->number = $number;
     }
 
-    /**
-     * @return string
-     */
     public function getContactPerson(): string
     {
         return $this->contactPerson;
     }
 
-    /**
-     * @param string $contactPerson
-     */
-    public function setContactPerson(string $contactPerson)
+    public function setContactPerson(string $contactPerson): void
     {
         $this->contactPerson = $contactPerson;
     }
 
-    /**
-     * @return string
-     */
     public function getTelephone(): string
     {
         return $this->telephone;
     }
 
-    /**
-     * @param string $telephone
-     */
-    public function setTelephone(string $telephone)
+    public function setTelephone(string $telephone): void
     {
         $this->telephone = $telephone;
     }
 
-    /**
-     * @return string
-     */
     public function getEmail(): string
     {
         return $this->email;
     }
 
-    /**
-     * @param string $email
-     */
-    public function setEmail(string $email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
 
-    /**
-     * @return bool
-     */
     public function isOrganizerType(): bool
     {
         return $this->organizerType;
     }
 
-    /**
-     * @param bool $organizerType
-     */
-    public function setOrganizerType(bool $organizerType)
+    public function setOrganizerType(bool $organizerType): void
     {
         $this->organizerType = $organizerType;
     }
 
-    /**
-     * @return string
-     */
     public function getOrganizerManuell(): string
     {
         return $this->organizerManuell;
     }
 
-    /**
-     * @param string $organizerManuell
-     */
-    public function setOrganizerManuell(string $organizerManuell)
+    public function setOrganizerManuell(string $organizerManuell): void
     {
         $this->organizerManuell = $organizerManuell;
     }
 
-    /**
-     * @return \DateTime|null
-     */
-    public function getApplicationDeadline()
+    public function getApplicationDeadline(): ?\DateTime
     {
         return $this->applicationDeadline;
     }
 
-    /**
-     * @param \DateTime|null $applicationDeadline
-     */
-    public function setApplicationDeadline(\DateTime $applicationDeadline = null)
+    public function setApplicationDeadline(?\DateTime $applicationDeadline = null): void
     {
         $this->applicationDeadline = $applicationDeadline;
     }
 
-    /**
-     * @return ObjectStorage
-     */
     public function getPromotion(): ObjectStorage
     {
         return $this->promotion;
     }
 
-    /**
-     * @param ObjectStorage $promotion
-     */
-    public function setPromotion(ObjectStorage $promotion)
+    public function setPromotion(ObjectStorage $promotion): void
     {
         $this->promotion = $promotion;
     }
 
-    /**
-     * @param Category $promotion
-     */
-    public function addPromotion(Category $promotion)
+    public function addPromotion(Category $promotion): void
     {
         $this->promotion->attach($promotion);
     }
 
-    /**
-     * @param Category $promotion
-     */
-    public function removePromotion(Category $promotion)
+    public function removePromotion(Category $promotion): void
     {
         $this->promotion->detach($promotion);
     }
 
-    /**
-     * @return array
-     */
     public function getPromotionType(): array
     {
         return GeneralUtility::trimExplode(',', $this->promotionType, true);
     }
 
-    /**
-     * @param string $promotionType
-     */
-    public function setPromotionType(string $promotionType)
+    public function setPromotionType(string $promotionType): void
     {
         $this->promotionType = $promotionType;
     }
 
-    /**
-     * @return string
-     */
     public function getPromotionValue(): string
     {
         return $this->promotionValue;
     }
 
-    /**
-     * @param string $promotionValue
-     */
-    public function setPromotionValue(string $promotionValue)
+    public function setPromotionValue(string $promotionValue): void
     {
         $this->promotionValue = $promotionValue;
     }
 
-    /**
-     * @return ObjectStorage
-     */
     public function getImages(): ObjectStorage
     {
         return $this->images;
     }
 
-    /**
-     * @param ObjectStorage $images
-     */
-    public function setImages(ObjectStorage $images)
+    public function setImages(ObjectStorage $images): void
     {
         $this->images = $images;
     }
 
-    /**
-     * @param FileReference $image
-     */
-    public function addImage(FileReference $image)
+    public function addImage(FileReference $image): void
     {
         $this->images->attach($image);
     }
 
-    /**
-     * @param FileReference $image
-     */
-    public function removeImage(FileReference $image)
+    public function removeImage(FileReference $image): void
     {
         $this->images->detach($image);
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     */
-    public function setDescription(string $description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return PoiCollection|null
-     */
-    public function getTxMaps2Uid()
+    public function getTxMaps2Uid(): ?PoiCollection
     {
         return $this->txMaps2Uid;
     }
 
-    /**
-     * @param PoiCollection $txMaps2Uid
-     */
-    public function setTxMaps2Uid(PoiCollection $txMaps2Uid)
+    public function setTxMaps2Uid(?PoiCollection $txMaps2Uid = null): void
     {
         $this->txMaps2Uid = $txMaps2Uid;
     }
 
-    /**
-     * @return ObjectStorage
-     */
     public function getFiles(): ObjectStorage
     {
         return $this->files;
     }
 
-    /**
-     * @param ObjectStorage $files
-     */
-    public function setFiles(ObjectStorage $files)
+    public function setFiles(ObjectStorage $files): void
     {
         $this->files = $files;
     }
 
-    /**
-     * @param FileReference $file
-     */
-    public function addFile(FileReference $file)
+    public function addFile(FileReference $file): void
     {
         $this->files->attach($file);
     }
 
-    /**
-     * @param FileReference $file
-     */
-    public function removeFile(FileReference $file)
+    public function removeFile(FileReference $file): void
     {
         $this->files->detach($file);
     }
 
-    /**
-     * @return ObjectStorage
-     */
     public function getLinks(): ObjectStorage
     {
         return $this->links;
     }
 
-    /**
-     * @param ObjectStorage $links
-     */
-    public function setLinks(ObjectStorage $links)
+    public function setLinks(ObjectStorage $links): void
     {
         $this->links = $links;
     }
 
-    /**
-     * @param Link $link
-     */
-    public function addLink(Link $link)
+    public function addLink(Link $link): void
     {
         $this->links->attach($link);
     }
 
-    /**
-     * @param Link $link
-     */
-    public function removeLink(Link $link)
+    public function removeLink(Link $link): void
     {
         $this->links->detach($link);
     }
