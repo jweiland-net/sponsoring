@@ -26,17 +26,11 @@ class ProjectController extends ActionController
      */
     protected $projectRepository;
 
-    /**
-     * @param ProjectRepository $projectRepository
-     */
-    public function injectProjectRepository(ProjectRepository $projectRepository)
+    public function __construct(ProjectRepository $projectRepository)
     {
         $this->projectRepository = $projectRepository;
     }
 
-    /**
-     * Pre-Processing of all actions
-     */
     public function initializeAction()
     {
         // if this value was not set, then it will be filled with 0
@@ -46,18 +40,12 @@ class ProjectController extends ActionController
         }
     }
 
-    /**
-     * Add some default variables to fluid templates
-     */
     public function initializeView(ViewInterface $view)
     {
-        $this->view->assign('typo3RequestDir', GeneralUtility::getIndpEnv('TYPO3_REQUEST_DIR'));
+        $view->assign('typo3RequestDir', GeneralUtility::getIndpEnv('TYPO3_REQUEST_DIR'));
     }
 
-    /**
-     * Action list
-     */
-    public function listAction()
+    public function listAction(): void
     {
         $projects = $this->projectRepository->findAll();
         $this->view->assign('projects', $projects);
@@ -72,7 +60,7 @@ class ProjectController extends ActionController
      * @validate $sortBy RegularExpression(regularExpression=/name|application_deadline|promotion_value/)
      * @validate $direction RegularExpression(regularExpression=/ASC|DESC/)
      */
-    public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC')
+    public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): void
     {
         $projects = $this->projectRepository->findAllSorted($promotion, $sortBy, $direction);
         $this->view->assign('projects', $projects);
@@ -82,11 +70,9 @@ class ProjectController extends ActionController
     }
 
     /**
-     * Action show
-     *
      * @param int $project
      */
-    public function showAction(int $project)
+    public function showAction(int $project): void
     {
         $this->view->assign('project', $this->projectRepository->findByIdentifier($project));
     }

@@ -113,31 +113,17 @@ class Project extends AbstractEntity
 
     public function __construct()
     {
-        $this->initStorageObjects();
-    }
-
-    /**
-     * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
-     */
-    protected function initStorageObjects()
-    {
         $this->promotion = new ObjectStorage();
         $this->images = new ObjectStorage();
         $this->files = new ObjectStorage();
         $this->links = new ObjectStorage();
     }
 
-    /**
-     * @return array
-     */
     public function getOrganisationseinheit(): array
     {
         return $this->organisationseinheit = ModelUtility::getOrganisationseinheit($this->organisationseinheit);
     }
 
-    /**
-     * @param array $organisationseinheit
-     */
     public function setOrganisationseinheit(array $organisationseinheit)
     {
         $this->organisationseinheit = $organisationseinheit;

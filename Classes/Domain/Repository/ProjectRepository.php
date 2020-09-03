@@ -22,13 +22,16 @@ class ProjectRepository extends Repository
     /**
      * Find all project records sorted by given parameters
      *
-     * @param string $promotion
+     * @param int $promotion
      * @param string $sortBy
      * @param string $direction
      * @return QueryResultInterface
      */
-    public function findAllSorted(string $promotion, string $sortBy = 'name', string $direction = 'ASC'): QueryResultInterface
-    {
+    public function findAllSorted(
+        int $promotion,
+        string $sortBy = 'name',
+        string $direction = 'ASC'
+    ): QueryResultInterface {
         $query = $this->createQuery();
         $query->setOrderings([
             $sortBy => $direction
@@ -37,7 +40,7 @@ class ProjectRepository extends Repository
         $constraints = [];
 
         // Add promotion filter
-        if (!empty($promotion)) {
+        if ($promotion > 0) {
             $constraints = $query->contains('promotion', $promotion);
         }
 
