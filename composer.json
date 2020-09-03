@@ -18,13 +18,13 @@
 		"source": "https://github.com/jweiland-net/sponsoring"
 	},
 	"require": {
-		"typo3/cms-core": "^8.7 || ^9.5",
+		"typo3/cms-core": "^9.5.17 || ^10.4.2",
 		"jweiland/maps2": ">=8.0.0",
-		"jweiland/service-bw2": "^3.0"
+		"jweiland/service-bw2": "^4.0"
 	},
 	"require-dev": {
-		"friendsofphp/php-cs-fixer": "^2.0",
-		"nimut/testing-framework": "^4.1"
+		"friendsofphp/php-cs-fixer": "^2.16",
+		"nimut/testing-framework": "^5.1",
 	},
 	"autoload": {
 		"psr-4": {
@@ -37,8 +37,7 @@
 		}
 	},
 	"config": {
-		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin"
+		"vendor-dir": ".Build/vendor"
 	},
 	"extra": {
 		"typo3/cms": {

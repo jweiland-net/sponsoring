@@ -4,19 +4,16 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'Sponsoring',
     'description' => 'Display sponsoring projects',
     'category' => 'plugin',
-    'author' => 'Stefan Frömken',
+    'author' => 'Stefan Froemken',
     'author_email' => 'projects@jweiland.net',
     'state' => 'stable',
-    'internal' => '',
-    'uploadfolder' => '1',
-    'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '2.0.3',
+    'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-9.5.99',
+            'typo3' => '9.5.17-10.4.99',
             'maps2' => '8.0.0-0.0.0',
-            'service_bw2' => '3.0.0-3.99.99'
+            'service_bw2' => '4.0.0-4.99.99'
         ],
         'conflicts' => [
         ],
