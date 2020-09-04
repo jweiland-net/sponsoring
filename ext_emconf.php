@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Sponsoring',
-    'description' => 'Display sponsoring projects',
+    'description' => 'Display and manage sponsoring projects like competitions',
     'category' => 'plugin',
     'author' => 'Stefan Froemken',
     'author_email' => 'projects@jweiland.net',
