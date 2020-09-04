@@ -7,13 +7,6 @@ plugin.tx_sponsoring {
 
   persistence {
     storagePid = {$plugin.tx_sponsoring.persistence.storagePid}
-    classes {
-      JWeiland\Sponsoring\Domain\Model\Category {
-        mapping {
-          tableName = sys_category
-        }
-      }
-    }
   }
 
   settings {
