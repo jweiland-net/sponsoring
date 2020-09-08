@@ -37,13 +37,13 @@
 		}
 	},
 	"config": {
-		"vendor-dir": ".Build/vendor"
+		"vendor-dir": ".build/vendor"
 	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "sponsoring",
-			"app-dir": ".Build",
-			"web-dir": ".Build/public"
+			"app-dir": ".build",
+			"web-dir": ".build/public"
 		}
 	},
 	"scripts": {
