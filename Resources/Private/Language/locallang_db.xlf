@@ -4,10 +4,6 @@
 				product-name="sponsoring">
 		<header/>
 		<body>
-			<trans-unit id="sys_category.icon" xml:space="preserve">
-				<source>Icon</source>
-			</trans-unit>
-
 			<trans-unit id="tx_sponsoring_domain_model_project">
 				<source>Project</source>
 			</trans-unit>

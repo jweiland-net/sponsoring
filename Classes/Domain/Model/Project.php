@@ -14,6 +14,7 @@ namespace JWeiland\Sponsoring\Domain\Model;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -72,7 +73,7 @@ class Project extends AbstractEntity
     protected $applicationDeadline;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Sponsoring\Domain\Model\Category>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
      */
     protected $promotion;
 
