@@ -27,10 +27,3 @@ CREATE TABLE tx_sponsoring_domain_model_link (
 	title varchar(255) DEFAULT '' NOT NULL,
 	link varchar(255) DEFAULT '' NOT NULL,
 );
-
-#
-# Table structure for table 'sys_category'
-#
-CREATE TABLE sys_category (
-	icon varchar(255) DEFAULT '' NOT NULL
-);

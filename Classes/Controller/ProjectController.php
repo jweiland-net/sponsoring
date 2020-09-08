@@ -13,6 +13,7 @@ namespace JWeiland\Sponsoring\Controller;
 
 use JWeiland\Sponsoring\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 
@@ -57,8 +58,8 @@ class ProjectController extends ActionController
      * @param int $promotion
      * @param string $sortBy
      * @param string $direction
-     * @validate $sortBy RegularExpression(regularExpression=/name|application_deadline|promotion_value/)
-     * @validate $direction RegularExpression(regularExpression=/ASC|DESC/)
+     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/name|application_deadline|promotion_value/"})
+     * @Extbase\Validate(param="direction", validator="RegularExpression", options={"regularExpression": "/ASC|DESC/"})
      */
     public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): void
     {
