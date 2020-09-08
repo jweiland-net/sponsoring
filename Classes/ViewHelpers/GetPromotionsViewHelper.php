@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace JWeiland\Sponsoring\ViewHelpers;
 
 use JWeiland\Sponsoring\Configuration\ExtConf;
-use JWeiland\Sponsoring\Domain\Repository\CategoryRepository;
+use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
