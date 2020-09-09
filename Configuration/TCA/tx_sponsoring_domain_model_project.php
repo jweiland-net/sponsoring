@@ -22,16 +22,16 @@ return [
         'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, path_segment, number, contact_person, telephone, email, organizer_type, organisationseinheit, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links',
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description, files, links,
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, path_segment, number, contact_person, telephone, email, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
         ],
         '1' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, number, contact_person, telephone, email, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, path_segment, number, contact_person, telephone, email, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
         ],
@@ -153,6 +153,27 @@ return [
                 'size' => 30,
                 'eval' => 'trim'
             ],
+        ],
+        'path_segment' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.path_segment',
+            'displayCond' => 'VERSION:IS:false',
+            'config' => [
+                'type' => 'slug',
+                'size' => 50,
+                'generatorOptions' => [
+                    'fields' => ['name', 'uid'],
+                    // Do not add pageSlug, as we add pageSlug on our own in RouteEnhancer
+                    'prefixParentPageSlug' => false,
+                    'fieldSeparator' => '-',
+                    'replacements' => [
+                        '/' => '-'
+                    ],
+                ],
+                'fallbackCharacter' => '-',
+                'eval' => 'uniqueInSite',
+                'default' => ''
+            ]
         ],
         'number' => [
             'exclude' => 1,
