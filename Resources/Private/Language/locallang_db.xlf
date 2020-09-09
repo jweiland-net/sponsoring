@@ -10,6 +10,9 @@
 			<trans-unit id="tx_sponsoring_domain_model_project.name">
 				<source>Name</source>
 			</trans-unit>
+			<trans-unit id="tx_sponsoring_domain_model_project.path_segment">
+				<source>Segment for URL</source>
+			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.number">
 				<source>Number</source>
 			</trans-unit>

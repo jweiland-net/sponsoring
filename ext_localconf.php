@@ -14,3 +14,6 @@ if (!defined('TYPO3_MODE')) {
         'Project' => 'search',
     ]
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['sponsoringUpdateSlug']
+    = \JWeiland\Sponsoring\Updater\SponsoringSlugUpdater::class;
