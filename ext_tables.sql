@@ -16,7 +16,6 @@ CREATE TABLE tx_sponsoring_domain_model_project (
   promotion_value varchar(255) DEFAULT '' NOT NULL,
   images int(11) unsigned NOT NULL default '0',
   description text NOT NULL,
-  tx_maps2_uid varchar(255) DEFAULT '' NOT NULL,
   files int(11) unsigned DEFAULT '0',
   links int(11) unsigned DEFAULT '0',
 );
