@@ -11,10 +11,8 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\Updater;
 
-use Doctrine\DBAL\Driver\Statement;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\DataHandling\SlugHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
