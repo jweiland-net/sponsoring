@@ -60,4 +60,5 @@ Sponsoring
    AdministratorManual/Index
    KnownProblems/Index
    ChangeLog/Index
+   Contribute/Index
    Links
