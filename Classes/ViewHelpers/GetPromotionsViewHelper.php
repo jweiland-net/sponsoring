@@ -17,6 +17,8 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * A ViewHelper to get direct child categories of defined root category in ExtConf
+ *
+ * @deprecated Will be removed with sponsoring 4.0.0 as repos have nothing to do in VHs.
  */
 class GetPromotionsViewHelper extends AbstractViewHelper
 {
