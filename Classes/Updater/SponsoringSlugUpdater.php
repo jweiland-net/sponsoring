@@ -49,7 +49,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         if ($slugHelper === null) {
             // Add uid to slug, to prevent duplicates
             $config = $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config'];
-            $config['fields'] = ['name', 'uid'];
+            $config['generatorOptions']['fields'] = ['name', 'uid'];
 
             $slugHelper = GeneralUtility::makeInstance(
                 SlugHelper::class,

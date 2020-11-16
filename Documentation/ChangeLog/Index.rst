@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.0.4**
+
+- Bugfix: Property "fields" must be in array of generatorOptions of SlugUpdater
+
 **Version 3.0.3**
 
 - Remove CSH
