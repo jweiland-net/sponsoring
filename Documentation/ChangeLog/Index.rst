@@ -7,6 +7,15 @@
 ChangeLog
 =========
 
+**Version 3.0.2**
+
+- Add UID to slug while running Slug Updater to prevent duplicates
+
+**Version 3.0.1**
+
+- Use !empty instead of count for performance reasons
+- Update slugs also for hidden records by start-/endtime
+
 **Version 3.0.0**
 
 - Remove TYPO3 8 compatibility

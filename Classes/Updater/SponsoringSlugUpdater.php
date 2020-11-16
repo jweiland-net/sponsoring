@@ -47,11 +47,15 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
     public function __construct(SlugHelper $slugHelper = null)
     {
         if ($slugHelper === null) {
+            // Add uid to slug, to prevent duplicates
+            $config = $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config'];
+            $config['fields'] = ['name', 'uid'];
+
             $slugHelper = GeneralUtility::makeInstance(
                 SlugHelper::class,
                 $this->tableName,
                 $this->fieldName,
-                $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config']
+                $config
             );
         }
         $this->slugHelper = $slugHelper;
