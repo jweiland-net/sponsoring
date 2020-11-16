@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.0.3**
+
+- Remove CSH
+
 **Version 3.0.2**
 
 - Add UID to slug while running Slug Updater to prevent duplicates
