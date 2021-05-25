@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.0.6**
+
+- Move SlugHelper from constructor argument into getSlugHelper()
+
 **Version 3.0.4**
 
 - Bugfix: Property "fields" must be in array of generatorOptions of SlugUpdater
