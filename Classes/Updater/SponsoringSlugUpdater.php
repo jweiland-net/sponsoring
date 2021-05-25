@@ -44,23 +44,6 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
      */
     protected $slugCache = [];
 
-    public function __construct(SlugHelper $slugHelper = null)
-    {
-        if ($slugHelper === null) {
-            // Add uid to slug, to prevent duplicates
-            $config = $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config'];
-            $config['generatorOptions']['fields'] = ['name', 'uid'];
-
-            $slugHelper = GeneralUtility::makeInstance(
-                SlugHelper::class,
-                $this->tableName,
-                $this->fieldName,
-                $config
-            );
-        }
-        $this->slugHelper = $slugHelper;
-    }
-
     /**
      * Return the identifier for this wizard
      * This should be the same string as used in the ext_localconf class registration
@@ -136,7 +119,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
         while ($recordToUpdate = $statement->fetch()) {
             if ((string)$recordToUpdate['name'] !== '') {
-                $slug = $this->slugHelper->generate($recordToUpdate, (int)$recordToUpdate['pid']);
+                $slug = $this->getSlugHelper()->generate($recordToUpdate, (int)$recordToUpdate['pid']);
                 $connection->update(
                     $this->tableName,
                     [
@@ -150,6 +133,24 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         }
 
         return true;
+    }
+
+    protected function getSlugHelper(): SlugHelper
+    {
+        if ($this->slugHelper === null) {
+            // Add uid to slug, to prevent duplicates
+            $config = $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config'];
+            $config['generatorOptions']['fields'] = ['name', 'uid'];
+
+            $this->slugHelper = GeneralUtility::makeInstance(
+                SlugHelper::class,
+                $this->tableName,
+                $this->fieldName,
+                $config
+            );
+        }
+
+        return $this->slugHelper;
     }
 
     /**
