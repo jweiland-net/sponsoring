@@ -31,7 +31,7 @@
 				</source>
 			</trans-unit>
 			<trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit">
-				<source>Organisationseinheit</source>
+				<source>Organizational unit</source>
 			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
 				<source>Insert your own organizer.</source>
