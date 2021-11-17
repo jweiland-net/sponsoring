@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="da">
+    <header/>
+    <body>
+      <trans-unit id="tx_sponsoring_domain_model_project" approved="yes">
+        <source>Project</source>
+        <target state="final">Projekt</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.name" approved="yes">
+        <source>Name</source>
+        <target state="final">Navn</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.number" approved="yes">
+        <source>Number</source>
+        <target state="final">Antal</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.contact_person" approved="yes">
+        <source>Contact Person</source>
+        <target state="final">Kontaktperson</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.telephone" approved="yes">
+        <source>Telephone</source>
+        <target state="final">Telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.email" approved="yes">
+        <source>Email</source>
+        <target state="final">E-mail</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer" approved="yes">
+        <source>Organizer</source>
+        <target state="final">Organisator</target>
+      </trans-unit>
+      <trans-unit id="tx_pfprojects_domain_model_project.organizer_type" approved="yes">
+        <source>Default: Choose organizer by a record of service_bw2. If checked: You can insert your own organizer with
+					help of a text field. Each click reloads the current form.
+				</source>
+        <target state="final">Standard: Vælg organisator via et element fra service_bw2. Hvis valgt: Du kan indsætte din egen organisator ved hjælp af et felt. Hvert klik genindlæser den aktuelle formular.
+				
+				</target>
+      </trans-unit>
+      <trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit">
+        <source>Organizational unit</source>
+        <target state="needs-translation">Organizational unit</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell" approved="yes">
+        <source>Insert your own organizer.</source>
+        <target state="final">Indsæt din egen organisator.</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.application_deadline" approved="yes">
+        <source>Application Deadline</source>
+        <target state="final">Tidsfrist for ansøgning</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion" approved="yes">
+        <source>Promotion</source>
+        <target state="final">Salgsfremstød</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type" approved="yes">
+        <source>Promotion Type</source>
+        <target state="final">Kampagne type</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money" approved="yes">
+        <source>Money</source>
+        <target state="final">Penge</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources" approved="yes">
+        <source>Material Resources</source>
+        <target state="final">Materielle ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service" approved="yes">
+        <source>Service</source>
+        <target state="final">Tjeneste</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription" approved="yes">
+        <source>See Description</source>
+        <target state="final">Se Beskrivelse</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_value" approved="yes">
+        <source>Promotion Value</source>
+        <target state="final">Salgsfremmende Værdi</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.images" approved="yes">
+        <source>Images</source>
+        <target state="final">Billeder</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.description" approved="yes">
+        <source>Description</source>
+        <target state="final">Beskrivelse</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.files" approved="yes">
+        <source>Files</source>
+        <target state="final">Filer</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.links" approved="yes">
+        <source>Links</source>
+        <target state="final">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="asc" approved="yes">
+        <source>Ascending</source>
+        <target state="final">Stigende</target>
+      </trans-unit>
+      <trans-unit id="desc" approved="yes">
+        <source>Descending</source>
+        <target state="final">Faldende</target>
+      </trans-unit>
+      <trans-unit id="sortBy" approved="yes">
+        <source>Sort by</source>
+        <target state="final">Sortér efter</target>
+      </trans-unit>
+      <trans-unit id="ordering" approved="yes">
+        <source>Ordering</source>
+        <target state="final">Sortering</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
