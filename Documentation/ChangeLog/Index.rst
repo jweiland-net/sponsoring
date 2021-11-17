@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.0.7**
+
+- Update translation for "Organizational unit"
+
 **Version 3.0.6**
 
 - Move SlugHelper from constructor argument into getSlugHelper()
