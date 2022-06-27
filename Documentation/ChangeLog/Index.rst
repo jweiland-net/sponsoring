@@ -7,6 +7,16 @@
 ChangeLog
 =========
 
+**Version 4.0.0**
+
+- Remove TYPO3 9 compatibility
+- Use new pagination API
+- Add Events to all Controller Actions
+
+**Version 3.1.0**
+
+- Set promotion type as multiple side by side
+
 **Version 3.0.7**
 
 - Update translation for "Organizational unit"

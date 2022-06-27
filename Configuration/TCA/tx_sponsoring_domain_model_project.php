@@ -19,10 +19,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'name,number,contact_person,telephone,email,organizer,promotion_value,description,',
-        'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.gif'
-    ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, path_segment, number, contact_person, telephone, email, organizer_type, organisationseinheit, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links',
+        'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.svg'
     ],
     'types' => [
         '0' => [
@@ -221,6 +218,7 @@ return [
         'organizer_type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_type',
+            'description' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_type.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -260,7 +258,7 @@ return [
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingle',
+                'renderType' => 'selectMultipleSideBySide',
                 'size' => 5,
                 'minitems' => 0,
                 'maxitems' => 99,
