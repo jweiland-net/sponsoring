@@ -221,6 +221,7 @@ return [
         'organizer_type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_type',
+            'description' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_type.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0,

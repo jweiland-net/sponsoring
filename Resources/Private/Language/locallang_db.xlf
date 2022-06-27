@@ -26,8 +26,12 @@
 				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type">
-				<source>Default: Choose organizer by a record of service_bw2. If checked: You can insert your own organizer with
-					help of a text field. Each click reloads the current form.
+				<source>Switch organizer type</source>
+			</trans-unit>
+			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description">
+				<source>
+					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
+					In the other case you get a text field to enter an organizer manually.
 				</source>
 			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit">
