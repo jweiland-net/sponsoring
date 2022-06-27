@@ -19,7 +19,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'name,number,contact_person,telephone,email,organizer,promotion_value,description,',
-        'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.gif'
+        'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, path_segment, number, contact_person, telephone, email, organizer_type, organisationseinheit, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links',
