@@ -14,13 +14,12 @@ namespace JWeiland\Sponsoring\Controller;
 use JWeiland\Sponsoring\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 
 /**
  * Main controller to list and show projects
  */
-class ProjectController extends ActionController
+class ProjectController extends AbstractController
 {
     /**
      * @var ProjectRepository
@@ -48,8 +47,9 @@ class ProjectController extends ActionController
 
     public function listAction(): void
     {
-        $projects = $this->projectRepository->findAll();
-        $this->view->assign('projects', $projects);
+        $this->postProcessAndAssignFluidVariables([
+            'projects' => $this->projectRepository->findAll()
+        ]);
     }
 
     /**
@@ -63,11 +63,12 @@ class ProjectController extends ActionController
      */
     public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): void
     {
-        $projects = $this->projectRepository->findAllSorted($promotion, $sortBy, $direction);
-        $this->view->assign('projects', $projects);
-        $this->view->assign('promotion', $promotion);
-        $this->view->assign('sortBy', $sortBy);
-        $this->view->assign('direction', $direction);
+        $this->postProcessAndAssignFluidVariables([
+            'projects' => $this->projectRepository->findAllSorted($promotion, $sortBy, $direction),
+            'promotion' => $promotion,
+            'sortBy' => $sortBy,
+            'direction' => $direction
+        ]);
     }
 
     /**
@@ -75,6 +76,8 @@ class ProjectController extends ActionController
      */
     public function showAction(int $project): void
     {
-        $this->view->assign('project', $this->projectRepository->findByIdentifier($project));
+        $this->postProcessAndAssignFluidVariables([
+            'project' => $this->projectRepository->findByIdentifier($project)
+        ]);
     }
 }

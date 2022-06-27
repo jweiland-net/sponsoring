@@ -1,54 +1,53 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+<html lang="en"
+			xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 			data-namespace-typo3-fluid="true">
 
 <f:if condition="{projects}">
 	<f:then>
 		<div class="list gridright scroll-container">
-			<f:widget.paginate objects="{projects}"
-												 as="paginatedProjects"
-												 configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage, insertAbove: settings.pageBrowser.insertAbove, insertBelow: settings.pageBrowser.insertBelow, maximumNumberOfLinks: settings.pageBrowser.maximumNumberOfLinks}">
-				<f:for each="{paginatedProjects}" as="project">
-					<div class="marginbottom scroll-item paddingbottom borderbottom">
-						<h2 class="noborder">
-							<f:link.action action="show"
-														 pageUid="{settings.pidOfDetailPage}"
-														 controller="Project"
-														 arguments="{project: project}">
-								{project.name}
-							</f:link.action>
-						</h2>
-						<f:if condition="{project.applicationDeadline}">
-							<dl>
-								<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.application_deadline')}:</dt>
-								<dd> {project.applicationDeadline -> f:format.date(format: 'd.m.Y')}</dd>
-							</dl>
-						</f:if>
-						<f:if condition="{project.promotion}">
-							<dl>
-								<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion')}:</dt>
-								<f:for each="{project.promotion}" as="promotion">
-									<dd>{promotion.title}</dd>
-								</f:for>
-							</dl>
-						</f:if>
-						<f:if condition="{project.promotionType}">
-							<dl>
-								<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_type')}:</dt>
-								<f:for each="{project.promotionType}" as="promotionType">
-									<dd>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_type.{promotionType}')}</dd>
-								</f:for>
-							</dl>
-						</f:if>
+			<f:for each="{projects}" as="project">
+				<div class="marginbottom scroll-item paddingbottom borderbottom">
+					<h2 class="noborder">
+						<f:link.action action="show"
+													 pageUid="{settings.pidOfDetailPage}"
+													 controller="Project"
+													 arguments="{project: project}">
+							{project.name}
+						</f:link.action>
+					</h2>
+					<f:if condition="{project.applicationDeadline}">
+						<dl>
+							<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.application_deadline')}:</dt>
+							<dd> {project.applicationDeadline -> f:format.date(format: 'd.m.Y')}</dd>
+						</dl>
+					</f:if>
+					<f:if condition="{project.promotion}">
+						<dl>
+							<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion')}:</dt>
+							<f:for each="{project.promotion}" as="promotion">
+								<dd>{promotion.title}</dd>
+							</f:for>
+						</dl>
+					</f:if>
+					<f:if condition="{project.promotionType}">
+						<dl>
+							<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_type')}:</dt>
+							<f:for each="{project.promotionType}" as="promotionType">
+								<dd>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_type.{promotionType}')}</dd>
+							</f:for>
+						</dl>
+					</f:if>
 
-						<f:if condition="{project.promotionValue}">
-							<dl>
-								<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_value')}:</dt>
-								<dd>{project.promotionValue}</dd>
-							</dl>
-						</f:if>
-					</div>
-				</f:for>
-			</f:widget.paginate>
+					<f:if condition="{project.promotionValue}">
+						<dl>
+							<dt>{f:translate(key: 'tx_sponsoring_domain_model_project.promotion_value')}:</dt>
+							<dd>{project.promotionValue}</dd>
+						</dl>
+					</f:if>
+				</div>
+			</f:for>
+			<f:render partial="Component/Pagination"
+								arguments="{pagination: pagination, paginator: paginator, actionName: actionName}" />
 		</div>
 	</f:then>
 	<f:else>

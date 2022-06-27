@@ -23,9 +23,6 @@ return [
         'searchFields' => 'title',
         'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_link.svg'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, link',
-    ],
     'types' => [
         '1' => [
             'showitem' => '--palette--;;languageHidden, title, link,
