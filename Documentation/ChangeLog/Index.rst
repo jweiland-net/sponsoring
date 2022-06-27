@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.1.0**
+
+- Set promotion type as multiple side by side
+
 **Version 3.0.7**
 
 - Update translation for "Organizational unit"
