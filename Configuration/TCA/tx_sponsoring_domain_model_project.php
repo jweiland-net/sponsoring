@@ -261,7 +261,7 @@ return [
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingle',
+                'renderType' => 'selectMultipleSideBySide',
                 'size' => 5,
                 'minitems' => 0,
                 'maxitems' => 99,
