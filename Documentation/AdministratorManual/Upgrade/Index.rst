@@ -1,11 +1,20 @@
 ..  include:: /Includes.rst.txt
 
 
-========
-Updating
-========
+..  _upgrade:
+
+=======
+Upgrade
+=======
 
 If you update EXT:sponsoring to a newer version, please read this section carefully!
+
+Update to Version 5.0.0
+=======================
+
+We have remove the `GetPromotions` ViewHelper. Please visit your overwritten sponsoring templates for `list` and
+`search` actions. Replace `sp:getPromotions` with just `promotions` and remove the sp ViewHelper registration
+at top of file.
 
 Update to Version 4.0.0
 =======================
