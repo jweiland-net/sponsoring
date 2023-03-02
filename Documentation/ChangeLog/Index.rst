@@ -7,6 +7,14 @@
 ChangeLog
 =========
 
+Version 5.0.0
+=============
+
+*   Add TYPO3 11 compatibility
+*   Remove GetPromotions ViewHelper
+*   Add item for newContentElementWizard
+*   Integrate AbstractController into ProjectController
+
 Version 4.0.0
 =============
 
