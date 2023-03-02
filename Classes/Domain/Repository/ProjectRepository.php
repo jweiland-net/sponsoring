@@ -34,7 +34,7 @@ class ProjectRepository extends Repository
     ): QueryResultInterface {
         $query = $this->createQuery();
         $query->setOrderings([
-            $sortBy => $direction
+            $sortBy => $direction,
         ]);
 
         $constraints = [];

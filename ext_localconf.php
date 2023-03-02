@@ -5,14 +5,14 @@ if (!defined('TYPO3_MODE')) {
 
 call_user_func(static function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'JWeiland.sponsoring',
+        'Sponsoring',
         'Sponsoring',
         [
-            'Project' => 'list, search, show',
+            \JWeiland\Sponsoring\Controller\ProjectController::class => 'list, search, show',
         ],
         // non-cacheable actions
         [
-            'Project' => 'search',
+            \JWeiland\Sponsoring\Controller\ProjectController::class => 'search',
         ]
     );
 

@@ -25,11 +25,11 @@ call_user_func(static function () {
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion',
             'fieldConfiguration' => [
                 'treeConfig' => [
-                    'rootUid' => $extensionConfiguration->get('sponsoring', 'rootCategory')
-                ]
+                    'rootUid' => $extensionConfiguration->get('sponsoring', 'rootCategory'),
+                ],
             ],
             'fieldList' => 'promotion', // prevent creating a category tab
-            'position' => 'before:promotion_type'
+            'position' => 'before:promotion_type',
         ]
     );
 });

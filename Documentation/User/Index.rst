@@ -1,7 +1,7 @@
-.. include:: ../Includes.txt
+..  include:: /Includes.rst.txt
 
 
-.. _user-manual:
+..  _user-manual:
 
 ============
 Users Manual
@@ -9,23 +9,23 @@ Users Manual
 
 Target group: **Editors**
 
-#. Select a page where you want to insert sponsoring
+#.  Select a page where you want to insert sponsoring
 
-#. Insert a new content element of type: `Insert Plugin`
+#.  Insert a new content element of type: `Insert Plugin`
 
-#. On tab `Plugin` select `Sponsoring` from selectbox.
+#.  On tab `Plugin` select `Sponsoring` from selectbox.
 
-#. Confirm reload to load special input fields for our extension (FlexForm).
+#.  Confirm reload to load special input fields for our extension (FlexForm).
 
-#. Save
+#.  Save
 
 Project Record
-""""""""""""""
+==============
 
-#. Select a Storage Page
+#.  Select a Storage Page
 
-#. Create a new record of type `Project`
+#.  Create a new record of type `Project`
 
-#. Give it at least a name and add some more information.
+#.  Give it at least a name and add some more information.
 
-#. By default you can insert up to 5 images to project record.
+#.  By default you can insert up to 5 images to project record.

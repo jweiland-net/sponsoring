@@ -1,7 +1,7 @@
-.. include:: Includes.txt
+..  include:: /Includes.rst.txt
 
 
-.. _links:
+..  _links:
 
 Links
 -----
@@ -12,13 +12,13 @@ You may want to remove this file if all important links are already handled in
 Settings.cfg.
 
 :Packagist:
-   https://packagist.org/packages/jweiland/sponsoring
+    https://packagist.org/packages/jweiland/sponsoring
 
 :TER:
-   https://extensions.typo3.org/extension/sponsoring/
+    https://extensions.typo3.org/extension/sponsoring/
 
 :Issues:
-   https://github.com/jweiland-net/sponsoring/issues
+    https://github.com/jweiland-net/sponsoring/issues
 
 :GitHub Repository:
-   https://github.com/jweiland-net/sponsoring
+    https://github.com/jweiland-net/sponsoring

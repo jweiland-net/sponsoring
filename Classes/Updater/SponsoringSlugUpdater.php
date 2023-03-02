@@ -40,15 +40,8 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
     protected $slugHelper;
 
     /**
-     * @var array
-     */
-    protected $slugCache = [];
-
-    /**
      * Return the identifier for this wizard
      * This should be the same string as used in the ext_localconf class registration
-     *
-     * @return string
      */
     public function getIdentifier(): string
     {
@@ -85,7 +78,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
                 )
             )
             ->execute()
-            ->fetchColumn(0);
+            ->fetchColumn();
 
         return (bool)$amountOfRecordsWithEmptySlug;
     }
@@ -123,10 +116,10 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
                 $connection->update(
                     $this->tableName,
                     [
-                        $this->fieldName => $slug
+                        $this->fieldName => $slug,
                     ],
                     [
-                        'uid' => (int)$recordToUpdate['uid']
+                        'uid' => (int)$recordToUpdate['uid'],
                     ]
                 );
             }
@@ -159,7 +152,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 

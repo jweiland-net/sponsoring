@@ -40,18 +40,17 @@ class GetPromotionsViewHelper extends AbstractViewHelper
 
     /**
      * Get direct child categories of defined root category in extConf
-     *
-     * @return array
      */
     public function render(): array
     {
         // make sure to have only categories which are direct children of rootCategory
-        $rootCategory = (int)$this->extConf->getRootCategory();
 
         /** @var \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult $categoryResult */
-        $categoryResult = $this->categoryRepository->findByParent($rootCategory);
+        $categoryResult = $this->categoryRepository->findByParent(
+            $this->extConf->getRootCategory()
+        );
 
-        // we need an Array as collection for usort and not an ObjectStorage
+        // We need an array as collection for usort and not an ObjectStorage
         return $categoryResult->toArray();
     }
 }
