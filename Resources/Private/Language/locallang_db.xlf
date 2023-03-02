@@ -4,6 +4,13 @@
 				product-name="sponsoring">
 		<header/>
 		<body>
+			<trans-unit id="plugin.title">
+				<source>Sponsoring</source>
+			</trans-unit>
+			<trans-unit id="plugin.description">
+				<source>Display and manage sponsoring projects like competitions</source>
+			</trans-unit>
+
 			<trans-unit id="tx_sponsoring_domain_model_project">
 				<source>Project</source>
 			</trans-unit>

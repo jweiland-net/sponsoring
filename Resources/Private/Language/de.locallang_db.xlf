@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z"
-				product-name="sponsoring">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring">
 		<header/>
 		<body>
+			<trans-unit id="plugin.title">
+				<source>Sponsoring</source>
+				<target>Sponsoring</target>
+			</trans-unit>
+			<trans-unit id="plugin.description">
+				<source>Display and manage sponsoring projects like competitions</source>
+				<target>Anzeige und Verwaltung von Sponsoringprojekten wie Wettbewerben</target>
+			</trans-unit>
+
 			<trans-unit id="tx_sponsoring_domain_model_project">
 				<source>Project</source>
 				<target>Projekt</target>
