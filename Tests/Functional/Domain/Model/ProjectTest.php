@@ -9,12 +9,12 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Sponsoring\Tests\Unit\Domain\Model;
+namespace JWeiland\Sponsoring\Tests\Functional\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Sponsoring\Domain\Model\Link;
 use JWeiland\Sponsoring\Domain\Model\Project;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
+use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -22,21 +22,35 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 /**
  * Test case.
  */
-class ProjectTest extends UnitTestCase
+class ProjectTest extends FunctionalTestCase
 {
     /**
      * @var Project
      */
     protected $subject;
 
+    /**
+     * @var array
+     */
+    protected $testExtensionsToLoad = [
+        'typo3conf/ext/maps2',
+        'typo3conf/ext/sponsoring',
+    ];
+
     protected function setUp(): void
     {
+        parent::setUp();
+
         $this->subject = new Project();
     }
 
     protected function tearDown(): void
     {
-        unset($this->subject);
+        unset(
+            $this->subject
+        );
+
+        parent::tearDown();
     }
 
     /**

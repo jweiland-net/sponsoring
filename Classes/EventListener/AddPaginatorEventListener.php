@@ -27,7 +27,7 @@ class AddPaginatorEventListener extends AbstractControllerEventListener
         'Project' => [
             'list',
             'search',
-        ]
+        ],
     ];
 
     public function __invoke(PostProcessFluidVariablesEvent $event): void
@@ -63,10 +63,6 @@ class AddPaginatorEventListener extends AbstractControllerEventListener
 
     protected function getItemsPerPage(PostProcessFluidVariablesEvent $event): int
     {
-        $itemsPerPage = $this->itemsPerPage;
-        if (isset($event->getSettings()['pageBrowser']['itemsPerPage'])) {
-            $itemsPerPage = $event->getSettings()['pageBrowser']['itemsPerPage'];
-        }
-        return (int)$itemsPerPage;
+        return (int)($event->getSettings()['pageBrowser']['itemsPerPage'] ?? $this->itemsPerPage);
     }
 }

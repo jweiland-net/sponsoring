@@ -11,7 +11,7 @@ CREATE TABLE tx_sponsoring_domain_model_project (
   organizer_type tinyint(1) unsigned DEFAULT '0' NOT NULL,
   organisationseinheit int(11) unsigned DEFAULT '0' NOT NULL,
   organizer_manuell varchar(255) DEFAULT '' NOT NULL,
-  application_deadline date DEFAULT '0000-00-00',
+  application_deadline date DEFAULT NULL,
   promotion_type varchar(255) DEFAULT '' NOT NULL,
   promotion_value varchar(255) DEFAULT '' NOT NULL,
   images int(11) unsigned NOT NULL default '0',

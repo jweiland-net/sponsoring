@@ -15,9 +15,6 @@ plugin.tx_sponsoring {
     pidOfServiceBw2Page = {$plugin.tx_sponsoring.settings.pidOfServiceBw2Page}
     pageBrowser {
       itemsPerPage = {$plugin.tx_sponsoring.settings.pageBrowser.itemsPerPage}
-      insertAbove = {$plugin.tx_sponsoring.settings.pageBrowser.insertAbove}
-      insertBelow = {$plugin.tx_sponsoring.settings.pageBrowser.insertBelow}
-      maximumNumberOfLinks = {$plugin.tx_sponsoring.settings.pageBrowser.maximumNumberOfLinks}
     }
   }
 

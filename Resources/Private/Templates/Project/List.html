@@ -1,6 +1,5 @@
 <html lang="en"
 			xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-			xmlns:sp="http://typo3.org/ns/JWeiland/Sponsoring/ViewHelpers"
 			data-namespace-typo3-fluid="true">
 
 <f:layout name="Default"/>
@@ -8,13 +7,13 @@
 <f:section name="main">
 	<aside class="floatright grid_4">
 		<div class="gridleft">
-			<f:form action="search" noCache="1" noCacheHash="1">
+			<f:form action="search" noCache="1">
 				<div class="marginbottom nobreakinside">
 					<label class="width100">{f:translate(key: 'sortBy')}:</label>
 					<f:form.select class="width100"
 												 name="promotion"
 												 value="{promotion}"
-												 options="{sp:getPromotions()}"
+												 options="{promotions}"
 												 optionLabelField="title"
 												 optionValueField="uid"
 												 prependOptionLabel=""

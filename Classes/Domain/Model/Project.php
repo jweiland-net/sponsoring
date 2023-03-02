@@ -14,6 +14,7 @@ namespace JWeiland\Sponsoring\Domain\Model;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -73,7 +74,7 @@ class Project extends AbstractEntity
     protected $applicationDeadline;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @var ObjectStorage<Category>
      */
     protected $promotion;
 
@@ -88,7 +89,7 @@ class Project extends AbstractEntity
     protected $promotionValue = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $images;
 
@@ -98,17 +99,17 @@ class Project extends AbstractEntity
     protected $description = '';
 
     /**
-     * @var \JWeiland\Maps2\Domain\Model\PoiCollection
+     * @var PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $files;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Sponsoring\Domain\Model\Link>
+     * @var ObjectStorage<Link>
      */
     protected $links;
 
@@ -120,9 +121,26 @@ class Project extends AbstractEntity
         $this->links = new ObjectStorage();
     }
 
+    /**
+     * Called again with initialize object, as fetching an entity from the DB does not use the constructor
+     */
+    public function initializeObject(): void
+    {
+        $this->promotion = $this->promotion ?? new ObjectStorage();
+        $this->images = $this->images ?? new ObjectStorage();
+        $this->files = $this->files ?? new ObjectStorage();
+        $this->links = $this->links ?? new ObjectStorage();
+    }
+
     public function getOrganisationseinheit(): array
     {
-        return $this->organisationseinheit = ModelUtility::getOrganisationseinheit($this->organisationseinheit);
+        if (MathUtility::canBeInterpretedAsInteger($this->organisationseinheit)) {
+            // Do not remove the int cast as $this->organisationseinheit will be filled by _setProperty()
+            // Please remove that with introduction of typed properties
+            $this->organisationseinheit = ModelUtility::getOrganisationseinheit((int)$this->organisationseinheit);
+        }
+
+        return $this->organisationseinheit;
     }
 
     public function setOrganisationseinheit(array $organisationseinheit): void
@@ -134,20 +152,15 @@ class Project extends AbstractEntity
      * Get Organizer
      * It can handle both kinds of organizer
      * Useful for Fluid Templates
-     *
-     * @return string
      */
     public function getOrganizer(): string
     {
         if ($this->organizerType) {
-            // get manually given organizer
+            // Get manually given organizer
             return $this->getOrganizerManuell();
         }
-        $organisationseinheit = $this->getOrganisationseinheit();
-        if (\is_array($organisationseinheit) && isset($organisationseinheit['name'])) {
-            return $organisationseinheit['name'];
-        }
-        return '';
+
+        return $this->getOrganisationseinheit()['name'] ?? '';
     }
 
     public function getName(): string
