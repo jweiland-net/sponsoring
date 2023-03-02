@@ -13,7 +13,7 @@ Update to Version 5.0.0
 =======================
 
 We have remove the `GetPromotions` ViewHelper. Please visit your overwritten sponsoring templates for `list` and
-`search` actions. Replace `sp:getPromotions` with just `promotions` and remove the sp ViewHelper registration
+`search` actions. Replace `sp:getPromotions()` with just `promotions` and remove the sp ViewHelper registration
 at top of file.
 
 Update to Version 4.0.0
