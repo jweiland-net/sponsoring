@@ -17,8 +17,10 @@ f.e. a competition.
 
 *   Create projects with its ID, description and contact person
 *   Assign an Organizer to a project
+
    *   Organizer can be a simple text-field
    *   You can choose an organizer out of Service BW API (EXT:service_bw2)
+
 *   Assign project to a promotion which is based on sys_category in TYPO3
 *   Add one or more images
 *   Choose from one of the default promotion types like `Money` and `Service`
