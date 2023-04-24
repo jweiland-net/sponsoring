@@ -7,11 +7,22 @@
 ChangeLog
 =========
 
+Version 5.0.2
+=============
+
+*   Remove exclude from path_segment
+*   Update .editorconfig
+*   Update .gitignore
+
+Version 5.0.1
+=============
+
+*   Remove GetPromotions ViewHelper
+
 Version 5.0.0
 =============
 
 *   Add TYPO3 11 compatibility
-*   Remove GetPromotions ViewHelper
 *   Add item for newContentElementWizard
 *   Integrate AbstractController into ProjectController
 
