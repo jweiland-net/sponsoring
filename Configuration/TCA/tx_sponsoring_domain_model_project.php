@@ -158,7 +158,6 @@ return [
             ],
         ],
         'path_segment' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.path_segment',
             'displayCond' => 'VERSION:IS:false',
             'config' => [
