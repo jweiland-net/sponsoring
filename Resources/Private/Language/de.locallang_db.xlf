@@ -3,123 +3,123 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="de">
     <header/>
     <body>
-      <trans-unit id="plugin.title">
+      <trans-unit id="plugin.title" approved="yes">
         <source>Sponsoring</source>
-        <target state="needs-translation">Sponsoring</target>
+        <target state="final">Sponsoring</target>
       </trans-unit>
-      <trans-unit id="plugin.description">
+      <trans-unit id="plugin.description" approved="yes">
         <source>Display and manage sponsoring projects like competitions</source>
-        <target state="needs-translation">Display and manage sponsoring projects like competitions</target>
+        <target state="final">Sponsoring Projekte wie Wettbewerbe anzeigen und verwalten</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project">
+      <trans-unit id="tx_sponsoring_domain_model_project" approved="yes">
         <source>Project</source>
-        <target state="needs-translation">Project</target>
+        <target state="final">Projekt</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.name">
+      <trans-unit id="tx_sponsoring_domain_model_project.name" approved="yes">
         <source>Name</source>
-        <target state="needs-translation">Name</target>
+        <target state="final">Name</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.path_segment">
+      <trans-unit id="tx_sponsoring_domain_model_project.path_segment" approved="yes">
         <source>Segment for URL</source>
-        <target state="needs-translation">Segment for URL</target>
+        <target state="final">Segment für URL</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.number">
+      <trans-unit id="tx_sponsoring_domain_model_project.number" approved="yes">
         <source>Number</source>
-        <target state="needs-translation">Number</target>
+        <target state="final">Nummer</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.contact_person">
+      <trans-unit id="tx_sponsoring_domain_model_project.contact_person" approved="yes">
         <source>Contact Person</source>
-        <target state="needs-translation">Contact Person</target>
+        <target state="final">Ansprechpartner/in</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.telephone">
+      <trans-unit id="tx_sponsoring_domain_model_project.telephone" approved="yes">
         <source>Telephone</source>
-        <target state="needs-translation">Telephone</target>
+        <target state="final">Telefon</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.email">
+      <trans-unit id="tx_sponsoring_domain_model_project.email" approved="yes">
         <source>Email</source>
-        <target state="needs-translation">Email</target>
+        <target state="final">E-Mail</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type">
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type" approved="yes">
         <source>Switch organizer type</source>
-        <target state="needs-translation">Switch organizer type</target>
+        <target state="final">Organisatortyp wechseln</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description">
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description" approved="yes">
         <source>
 					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
 					In the other case you get a text field to enter an organizer manually.
 				</source>
-        <target state="needs-translation">
-					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
-					In the other case you get a text field to enter an organizer manually.
+        <target state="final">
+					Wenn deaktiviert, haben Sie die Möglichkeit, einen Organisator aus der Service-BW-Erweiterung auszuwählen.
+					Im anderen Fall erhalten Sie ein Textfeld zur manuellen Eingabe eines Organisators.
 				</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit">
+      <trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit" approved="yes">
         <source>Choose an organizer record of service_bw2.</source>
-        <target state="needs-translation">Choose an organizer record of service_bw2.</target>
+        <target state="final">Wählen Sie einen Veranstalter der service_bw2-Extension.</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell" approved="yes">
         <source>Insert your own organizer.</source>
-        <target state="needs-translation">Insert your own organizer.</target>
+        <target state="final">Tragen Sie den Veranstalter ein.</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
+      <trans-unit id="tx_sponsoring_domain_model_project.application_deadline" approved="yes">
         <source>Application Deadline</source>
-        <target state="needs-translation">Application Deadline</target>
+        <target state="final">Ende der Bewerbungsfrist</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion" approved="yes">
         <source>Promotion</source>
-        <target state="needs-translation">Promotion</target>
+        <target state="final">Förderbereich</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type" approved="yes">
         <source>Promotion Type</source>
-        <target state="needs-translation">Promotion Type</target>
+        <target state="final">Art der Förderung</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money" approved="yes">
         <source>Money</source>
-        <target state="needs-translation">Money</target>
+        <target state="final">Geld</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources" approved="yes">
         <source>Material Resources</source>
-        <target state="needs-translation">Material Resources</target>
+        <target state="final">Sachmittel</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service" approved="yes">
         <source>Service</source>
-        <target state="needs-translation">Service</target>
+        <target state="final">Dienstleistung</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription" approved="yes">
         <source>See Description</source>
-        <target state="needs-translation">See Description</target>
+        <target state="final">Siehe Beschreibung</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.promotion_value">
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_value" approved="yes">
         <source>Promotion Value</source>
-        <target state="needs-translation">Promotion Value</target>
+        <target state="final">Wert der Förderung</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.images">
+      <trans-unit id="tx_sponsoring_domain_model_project.images" approved="yes">
         <source>Images</source>
-        <target state="needs-translation">Images</target>
+        <target state="final">Bilder</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.description">
+      <trans-unit id="tx_sponsoring_domain_model_project.description" approved="yes">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="final">Beschreibung</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.files">
+      <trans-unit id="tx_sponsoring_domain_model_project.files" approved="yes">
         <source>Files</source>
-        <target state="needs-translation">Files</target>
+        <target state="final">Dateien</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.links">
+      <trans-unit id="tx_sponsoring_domain_model_project.links" approved="yes">
         <source>Links</source>
-        <target state="needs-translation">Links</target>
+        <target state="final">Links</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_link">
+      <trans-unit id="tx_sponsoring_domain_model_link" approved="yes">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="final">Link</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_link.title">
+      <trans-unit id="tx_sponsoring_domain_model_link.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_link.link">
+      <trans-unit id="tx_sponsoring_domain_model_link.link" approved="yes">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="final">Link</target>
       </trans-unit>
     </body>
   </file>
