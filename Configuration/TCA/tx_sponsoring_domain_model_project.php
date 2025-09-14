@@ -1,11 +1,14 @@
 <?php
+
+use JWeiland\ServiceBw2\Utility\TCAUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\AbstractFile;
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'type' => 'organizer_type',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
@@ -46,19 +49,7 @@ return [
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple',
-                    ],
-                ],
-                'default' => 0,
-            ],
+            'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -68,8 +59,8 @@ return [
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        '',
-                        0,
+                        'label' => '',
+                        'value' => 0,
                     ],
                 ],
                 'foreign_table' => 'tx_sponsoring_domain_model_project',
@@ -90,7 +81,7 @@ return [
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '',
+                        'label' => '',
                         1 => '',
                         'invertStateDisplay' => true,
                     ],
@@ -207,11 +198,7 @@ return [
         'email' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.email',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim,email',
-            ],
+            'config' => ['type' => 'email'],
         ],
         'organizer_type' => [
             'exclude' => 1,
@@ -226,7 +213,7 @@ return [
             'displayCond' => 'FIELD:organizer_type:=:0',
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organisationseinheit',
-            'config' => \JWeiland\ServiceBw2\Utility\TCAUtility::getOrganisationseinheitenFieldTCAConfig(['maxitems' => 1]),
+            'config' => TCAUtility::getOrganisationseinheitenFieldTCAConfig(['maxitems' => 1]),
         ],
         'organizer_manuell' => [
             'displayCond' => 'FIELD:organizer_type:=:1',
@@ -261,10 +248,10 @@ return [
                 'minitems' => 0,
                 'maxitems' => 99,
                 'items' => [
-                    ['LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.money', 'money'],
-                    ['LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.materialResources', 'materialResources'],
-                    ['LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.service', 'service'],
-                    ['LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.seeDescription', 'seeDescription'],
+                    ['label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.money', 'value' => 'money'],
+                    ['label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.materialResources', 'value' => 'materialResources'],
+                    ['label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.service', 'value' => 'service'],
+                    ['label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.promotion_type.seeDescription', 'value' => 'seeDescription'],
                 ],
             ],
         ],
@@ -280,7 +267,7 @@ return [
         'images' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.images',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'images',
                 [
                     'minitems' => 0,
@@ -295,27 +282,27 @@ return [
                             --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette',
                             ],
-                            \TYPO3\CMS\Core\Resource\AbstractFile::FILETYPE_TEXT => [
+                            AbstractFile::FILETYPE_TEXT => [
                                 'showitem' => '
                             --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette',
                             ],
-                            \TYPO3\CMS\Core\Resource\AbstractFile::FILETYPE_IMAGE => [
+                            AbstractFile::FILETYPE_IMAGE => [
                                 'showitem' => '
                             --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette',
                             ],
-                            \TYPO3\CMS\Core\Resource\AbstractFile::FILETYPE_AUDIO => [
+                            AbstractFile::FILETYPE_AUDIO => [
                                 'showitem' => '
                             --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette',
                             ],
-                            \TYPO3\CMS\Core\Resource\AbstractFile::FILETYPE_VIDEO => [
+                            AbstractFile::FILETYPE_VIDEO => [
                                 'showitem' => '
                             --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette',
                             ],
-                            \TYPO3\CMS\Core\Resource\AbstractFile::FILETYPE_APPLICATION => [
+                            AbstractFile::FILETYPE_APPLICATION => [
                                 'showitem' => '
                             --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                             --palette--;;filePalette',
@@ -341,7 +328,7 @@ return [
         'files' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.files',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'files',
                 [
                     'minitems' => 0,

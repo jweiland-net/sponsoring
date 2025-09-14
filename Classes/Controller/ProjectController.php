@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use JWeiland\Sponsoring\Configuration\ExtConf;
 use JWeiland\Sponsoring\Domain\Repository\CategoryRepository;
 use JWeiland\Sponsoring\Domain\Repository\ProjectRepository;
@@ -69,19 +70,18 @@ class ProjectController extends ActionController
         $view->assign('typo3RequestDir', GeneralUtility::getIndpEnv('TYPO3_REQUEST_DIR'));
     }
 
-    public function listAction(): void
+    public function listAction(): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'projects' => $this->projectRepository->findAll(),
             'promotions' => $this->categoryRepository->findByParent($this->extConf->getRootCategory()),
         ]);
+        return $this->htmlResponse();
     }
 
-    /**
-     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/name|application_deadline|promotion_value/"})
-     * @Extbase\Validate(param="direction", validator="RegularExpression", options={"regularExpression": "/ASC|DESC/"})
-     */
-    public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): void
+    #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/name|application_deadline|promotion_value/']])]
+    #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/ASC|DESC/']])]
+    public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'projects' => $this->projectRepository->findAllSorted($promotion, $sortBy, $direction),
@@ -90,13 +90,15 @@ class ProjectController extends ActionController
             'direction' => $direction,
             'promotions' => $this->categoryRepository->findByParent($this->extConf->getRootCategory()),
         ]);
+        return $this->htmlResponse();
     }
 
-    public function showAction(int $project): void
+    public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+        return $this->htmlResponse();
     }
 
     protected function postProcessAndAssignFluidVariables(array $variables = []): void

@@ -1,5 +1,5 @@
 <?php
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
@@ -15,21 +15,6 @@ call_user_func(static function () {
             \JWeiland\Sponsoring\Controller\ProjectController::class => 'search',
         ]
     );
-
-    // Register SVG Icon Identifier
-    $svgIcons = [
-        'ext-sponsoring-wizard-icon' => 'Extension.svg',
-    ];
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Core\Imaging\IconRegistry::class
-    );
-    foreach ($svgIcons as $identifier => $fileName) {
-        $iconRegistry->registerIcon(
-            $identifier,
-            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:sponsoring/Resources/Public/Icons/' . $fileName]
-        );
-    }
 
     // Add sponsoring plugin to new element wizard
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(

@@ -1,23 +1,27 @@
 <?php
-if (!defined('TYPO3_MODE')) {
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use JWeiland\Maps2\Tca\Maps2Registry;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
 call_user_func(static function () {
     // Add tx_maps2_uid column to project table
-    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
-        \JWeiland\Maps2\Tca\Maps2Registry::getInstance()->add(
+    if (ExtensionManagementUtility::isLoaded('maps2')) {
+        Maps2Registry::getInstance()->add(
             'sponsoring',
             'tx_sponsoring_domain_model_project'
         );
     }
 
     // Get and build extConf
-    $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+    $extensionConfiguration = GeneralUtility::makeInstance(
+        ExtensionConfiguration::class
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
+    ExtensionManagementUtility::makeCategorizable(
         'sponsoring',
         'tx_sponsoring_domain_model_project',
         'promotion',

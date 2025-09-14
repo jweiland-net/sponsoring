@@ -65,19 +65,12 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         $amountOfRecordsWithEmptySlug = $queryBuilder
             ->count('*')
-            ->from($this->tableName)
-            ->where(
-                $queryBuilder->expr()->orX(
-                    $queryBuilder->expr()->eq(
-                        $this->fieldName,
-                        $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
-                    ),
-                    $queryBuilder->expr()->isNull(
-                        $this->fieldName
-                    )
-                )
-            )
-            ->execute()
+            ->from($this->tableName)->where($queryBuilder->expr()->or($queryBuilder->expr()->eq(
+            $this->fieldName,
+            $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
+        ), $queryBuilder->expr()->isNull(
+            $this->fieldName
+        )))->executeQuery()
             ->fetchColumn();
 
         return (bool)$amountOfRecordsWithEmptySlug;
@@ -95,19 +88,12 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         $statement = $queryBuilder
             ->select('uid', 'pid', 'name')
-            ->from($this->tableName)
-            ->where(
-                $queryBuilder->expr()->orX(
-                    $queryBuilder->expr()->eq(
-                        $this->fieldName,
-                        $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
-                    ),
-                    $queryBuilder->expr()->isNull(
-                        $this->fieldName
-                    )
-                )
-            )
-            ->execute();
+            ->from($this->tableName)->where($queryBuilder->expr()->or($queryBuilder->expr()->eq(
+            $this->fieldName,
+            $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
+        ), $queryBuilder->expr()->isNull(
+            $this->fieldName
+        )))->executeQuery();
 
         $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
         while ($recordToUpdate = $statement->fetch()) {

@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+use JWeiland\Sponsoring\Domain\Model\Category;
+
 return [
-    \JWeiland\Sponsoring\Domain\Model\Category::class => [
+    Category::class => [
         'tableName' => 'sys_category',
     ],
 ];

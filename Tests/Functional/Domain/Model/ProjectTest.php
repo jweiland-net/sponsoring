@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\Tests\Functional\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Sponsoring\Domain\Model\Link;
 use JWeiland\Sponsoring\Domain\Model\Project;
-use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
