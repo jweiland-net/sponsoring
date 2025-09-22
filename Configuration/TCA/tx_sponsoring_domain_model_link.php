@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * This file is part of the package jweiland/sponsoring.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_link',

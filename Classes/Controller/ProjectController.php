@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use JWeiland\Sponsoring\Configuration\ExtConf;
 use JWeiland\Sponsoring\Domain\Repository\CategoryRepository;
 use JWeiland\Sponsoring\Domain\Repository\ProjectRepository;
 use JWeiland\Sponsoring\Event\PostProcessFluidVariablesEvent;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -108,8 +108,8 @@ class ProjectController extends ActionController
             new PostProcessFluidVariablesEvent(
                 $this->request,
                 $this->settings,
-                $variables
-            )
+                $variables,
+            ),
         );
 
         $this->view->assignMultiple($event->getFluidVariables());

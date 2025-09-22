@@ -1,8 +1,14 @@
 <?php
 
+/*
+ * This file is part of the package jweiland/sponsoring.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 use JWeiland\ServiceBw2\Utility\TCAUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Resource\AbstractFile;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project',
@@ -25,15 +31,15 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person, 
+            'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person,
             --palette--;;telephoneEmail, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description, files, links,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
         ],
         '1' => [
             'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person,
              --palette--;;telephoneEmail, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
         ],
     ],
@@ -267,51 +273,12 @@ return [
         'images' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.images',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'images',
-                [
-                    'minitems' => 0,
-                    'maxitems' => 5,
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                            --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette',
-                            ],
-                            AbstractFile::FILETYPE_TEXT => [
-                                'showitem' => '
-                            --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette',
-                            ],
-                            AbstractFile::FILETYPE_IMAGE => [
-                                'showitem' => '
-                            --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette',
-                            ],
-                            AbstractFile::FILETYPE_AUDIO => [
-                                'showitem' => '
-                            --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette',
-                            ],
-                            AbstractFile::FILETYPE_VIDEO => [
-                                'showitem' => '
-                            --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette',
-                            ],
-                            AbstractFile::FILETYPE_APPLICATION => [
-                                'showitem' => '
-                            --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+            'config' => [
+                'type' => 'file',
+                'minitems' => 0,
+                'maxitems' => 5,
+                'allowed' => 'common-image-types',
+            ],
         ],
         'description' => [
             'l10n_mode' => 'prefixLangTitle',
@@ -328,16 +295,12 @@ return [
         'files' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.files',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'files',
-                [
-                    'minitems' => 0,
-                    'maxitems' => 10,
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',
-                    ],
-                ],
-            ),
+            'config' => [
+                'type' => 'file',
+                'minitems' => 0,
+                'maxitems' => 10,
+                'allowed' => 'common-image-types',
+            ],
         ],
         'links' => [
             'exclude' => 1,

@@ -9,19 +9,21 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Sponsoring\Updater;
+namespace JWeiland\Sponsoring\Update;
 
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\DataHandling\SlugHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /*
  * Updater to fill empty slug columns of project records
  */
+#[UpgradeWizard('sponsoring_sponsoringSlugUpdater')]
 class SponsoringSlugUpdater implements UpgradeWizardInterface
 {
     /**
@@ -66,11 +68,11 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         $amountOfRecordsWithEmptySlug = $queryBuilder
             ->count('*')
             ->from($this->tableName)->where($queryBuilder->expr()->or($queryBuilder->expr()->eq(
-            $this->fieldName,
-            $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
-        ), $queryBuilder->expr()->isNull(
-            $this->fieldName
-        )))->executeQuery()
+                $this->fieldName,
+                $queryBuilder->createNamedParameter('', Connection::PARAM_STR),
+            ), $queryBuilder->expr()->isNull(
+                $this->fieldName,
+            )))->executeQuery()
             ->fetchColumn();
 
         return (bool)$amountOfRecordsWithEmptySlug;
@@ -89,11 +91,11 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         $statement = $queryBuilder
             ->select('uid', 'pid', 'name')
             ->from($this->tableName)->where($queryBuilder->expr()->or($queryBuilder->expr()->eq(
-            $this->fieldName,
-            $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
-        ), $queryBuilder->expr()->isNull(
-            $this->fieldName
-        )))->executeQuery();
+                $this->fieldName,
+                $queryBuilder->createNamedParameter('', Connection::PARAM_STR),
+            ), $queryBuilder->expr()->isNull(
+                $this->fieldName,
+            )))->executeQuery();
 
         $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
         while ($recordToUpdate = $statement->fetch()) {
@@ -106,7 +108,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
                     ],
                     [
                         'uid' => (int)$recordToUpdate['uid'],
-                    ]
+                    ],
                 );
             }
         }
@@ -125,7 +127,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
                 SlugHelper::class,
                 $this->tableName,
                 $this->fieldName,
-                $config
+                $config,
             );
         }
 
