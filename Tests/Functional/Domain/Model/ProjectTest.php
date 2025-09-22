@@ -14,6 +14,7 @@ namespace JWeiland\Sponsoring\Tests\Functional\Domain\Model;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Sponsoring\Domain\Model\Link;
 use JWeiland\Sponsoring\Domain\Model\Project;
+use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -24,17 +25,11 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
  */
 class ProjectTest extends FunctionalTestCase
 {
-    /**
-     * @var Project
-     */
-    protected $subject;
+    protected Project $subject;
 
-    /**
-     * @var array
-     */
-    protected $testExtensionsToLoad = [
-        'typo3conf/ext/maps2',
-        'typo3conf/ext/sponsoring',
+    protected array $testExtensionsToLoad = [
+        'jweiland/maps2',
+        'jweiland/sponsoring',
     ];
 
     protected function setUp(): void
@@ -53,9 +48,7 @@ class ProjectTest extends FunctionalTestCase
         parent::tearDown();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNameInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -64,9 +57,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setNameSetsName(): void
     {
         $this->subject->setName('foo bar');
@@ -77,9 +68,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNumberInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -88,9 +77,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setNumberSetsNumber(): void
     {
         $this->subject->setNumber('foo bar');
@@ -101,9 +88,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getContactPersonInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -112,9 +97,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setContactPersonSetsContactPerson(): void
     {
         $this->subject->setContactPerson('foo bar');
@@ -125,9 +108,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTelephoneInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -136,9 +117,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setTelephoneSetsTelephone(): void
     {
         $this->subject->setTelephone('foo bar');
@@ -149,9 +128,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getEmailInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -160,9 +137,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setEmailSetsEmail(): void
     {
         $this->subject->setEmail('foo bar');
@@ -173,9 +148,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOrganizerTypeInitiallyReturnsFalse(): void
     {
         self::assertFalse(
@@ -183,9 +156,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setOrganizerTypeSetsOrganizerType(): void
     {
         $this->subject->setOrganizerType(true);
@@ -194,9 +165,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOrganizerManuellInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -205,9 +174,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setOrganizerManuellSetsOrganizerManuell(): void
     {
         $this->subject->setOrganizerManuell('foo bar');
@@ -218,9 +185,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getApplicationDeadlineInitiallyReturnsNull(): void
     {
         self::assertNull(
@@ -228,9 +193,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setApplicationDeadlineSetsApplicationDeadline(): void
     {
         $date = new \DateTime();
@@ -242,9 +205,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPromotionInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
@@ -253,9 +214,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setPromotionSetsPromotion(): void
     {
         $object = new Category();
@@ -269,9 +228,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function addPromotionAddsOnePromotion(): void
     {
         $objectStorage = new ObjectStorage();
@@ -288,9 +245,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function removePromotionRemovesOnePromotion(): void
     {
         $object = new Category();
@@ -307,9 +262,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPromotionTypeInitiallyReturnsEmptyArray(): void
     {
         self::assertSame(
@@ -318,9 +271,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setPromotionTypeSetsPromotionType(): void
     {
         $this->subject->setPromotionType('foo, bar');
@@ -331,9 +282,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPromotionValueInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -342,9 +291,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setPromotionValueSetsPromotionValue(): void
     {
         $this->subject->setPromotionValue('foo bar');
@@ -355,9 +302,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getImagesInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
@@ -366,9 +311,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setImagesSetsImages(): void
     {
         $object = new FileReference();
@@ -382,9 +325,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function addImageAddsOneImage(): void
     {
         $objectStorage = new ObjectStorage();
@@ -401,9 +342,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function removeImageRemovesOneImage(): void
     {
         $object = new FileReference();
@@ -420,9 +359,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getDescriptionInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
@@ -431,9 +368,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setDescriptionSetsDescription(): void
     {
         $this->subject->setDescription('foo bar');
@@ -444,17 +379,13 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTxMaps2UidInitiallyReturnsNull(): void
     {
         self::assertNull($this->subject->getTxMaps2Uid());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setTxMaps2UidSetsTxMaps2Uid(): void
     {
         $instance = new PoiCollection();
@@ -466,9 +397,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFilesInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
@@ -477,9 +406,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setFilesSetsFiles(): void
     {
         $object = new FileReference();
@@ -493,9 +420,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function addFileAddsOneFile(): void
     {
         $objectStorage = new ObjectStorage();
@@ -512,9 +437,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function removeFileRemovesOneFile(): void
     {
         $object = new FileReference();
@@ -531,9 +454,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLinksInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
@@ -542,9 +463,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setLinksSetsLinks(): void
     {
         $object = new Link();
@@ -558,9 +477,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function addLinkAddsOneLink(): void
     {
         $objectStorage = new ObjectStorage();
@@ -577,9 +494,7 @@ class ProjectTest extends FunctionalTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function removeLinkRemovesOneLink(): void
     {
         $object = new Link();
