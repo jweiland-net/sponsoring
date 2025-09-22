@@ -28,7 +28,4 @@ call_user_func(static function () {
         ],
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
-
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['sponsoringUpdateSlug']
-        = SponsoringSlugUpdater::class;
 });

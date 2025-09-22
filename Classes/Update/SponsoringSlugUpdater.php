@@ -26,20 +26,11 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 #[UpgradeWizard('sponsoring_sponsoringSlugUpdater')]
 class SponsoringSlugUpdater implements UpgradeWizardInterface
 {
-    /**
-     * @var string
-     */
-    protected $tableName = 'tx_sponsoring_domain_model_project';
+    protected string $tableName = 'tx_sponsoring_domain_model_project';
 
-    /**
-     * @var string
-     */
-    protected $fieldName = 'path_segment';
+    protected string $fieldName = 'path_segment';
 
-    /**
-     * @var SlugHelper
-     */
-    protected $slugHelper;
+    protected SlugHelper $slugHelper;
 
     /**
      * Return the identifier for this wizard
@@ -73,7 +64,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
             ), $queryBuilder->expr()->isNull(
                 $this->fieldName,
             )))->executeQuery()
-            ->fetchColumn();
+            ->fetchOne();
 
         return (bool)$amountOfRecordsWithEmptySlug;
     }
