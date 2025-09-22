@@ -8,7 +8,6 @@
  */
 
 use JWeiland\Pfprojects\Controller\ProjectController;
-use JWeiland\Sponsoring\Updater\SponsoringSlugUpdater;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 if (!defined('TYPO3')) {
