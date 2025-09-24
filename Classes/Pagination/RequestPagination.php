@@ -20,20 +20,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class RequestPagination implements PaginationInterface
 {
-    /**
-     * @var string
-     */
-    protected $pluginNamespace = 'tx_sponsoring_sponsoring';
+    protected string $pluginNamespace = 'tx_sponsoring_sponsoring';
 
-    /**
-     * @var PaginatorInterface
-     */
-    protected $paginator;
+    protected PaginatorInterface $paginator;
 
-    /**
-     * @var array
-     */
-    protected $arguments = [];
+    protected array $arguments = [];
 
     public function __construct(PaginatorInterface $paginator)
     {

@@ -26,35 +26,11 @@ use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
  */
 class ProjectController extends ActionController
 {
-    /**
-     * @var ProjectRepository
-     */
-    protected $projectRepository;
-
-    /**
-     * @var CategoryRepository
-     */
-    protected $categoryRepository;
-
-    /**
-     * @var ExtConf
-     */
-    protected $extConf;
-
-    public function injectProjectRepository(ProjectRepository $projectRepository): void
-    {
-        $this->projectRepository = $projectRepository;
-    }
-
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
-    {
-        $this->categoryRepository = $categoryRepository;
-    }
-
-    public function injectExtConf(ExtConf $extConf): void
-    {
-        $this->extConf = $extConf;
-    }
+    public function __construct(
+        private readonly ProjectRepository $projectRepository,
+        private readonly CategoryRepository $categoryRepository,
+        private readonly ExtConf $extConf,
+    ) {}
 
     public function initializeAction(): void
     {
