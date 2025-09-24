@@ -31,6 +31,9 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
     protected string $fieldName = 'path_segment';
 
     protected SlugHelper $slugHelper;
+    public function __construct(
+        private readonly ConnectionPool $connectionPool,
+    ) {}
 
     /**
      * Return the identifier for this wizard
@@ -53,7 +56,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
 
     public function updateNecessary(): bool
     {
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable($this->tableName);
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->tableName);
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         $amountOfRecordsWithEmptySlug = $queryBuilder
@@ -76,7 +79,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
      */
     public function executeUpdate(): bool
     {
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable($this->tableName);
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->tableName);
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         $statement = $queryBuilder
@@ -88,7 +91,7 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
                 $this->fieldName,
             )))->executeQuery();
 
-        $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
+        $connection = $this->connectionPool->getConnectionForTable($this->tableName);
         while ($recordToUpdate = $statement->fetch()) {
             if ((string)$recordToUpdate['name'] !== '') {
                 $slug = $this->getSlugHelper()->generate($recordToUpdate, (int)$recordToUpdate['pid']);
@@ -133,10 +136,5 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
         return [
             DatabaseUpdatedPrerequisite::class,
         ];
-    }
-
-    protected function getConnectionPool(): ConnectionPool
-    {
-        return GeneralUtility::makeInstance(ConnectionPool::class);
     }
 }
