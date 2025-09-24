@@ -45,7 +45,7 @@ class Project extends AbstractEntity
 
     protected string $organizerManuell = '';
 
-    protected \DateTime $applicationDeadline;
+    protected ?\DateTime $applicationDeadline = null;
 
     /**
      * @var ObjectStorage<Category>

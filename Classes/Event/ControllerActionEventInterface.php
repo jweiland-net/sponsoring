@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\Event;
 
-use TYPO3\CMS\Extbase\Mvc\Request;
+use Psr\Http\Message\RequestInterface;
 
 interface ControllerActionEventInterface
 {
-    public function getRequest(): Request;
+    public function getRequest(): RequestInterface;
 
     /**
      * Get controller name.

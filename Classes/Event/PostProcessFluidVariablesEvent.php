@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Sponsoring\Event;
 
-use TYPO3\CMS\Extbase\Mvc\RequestInterface;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * Post process controller actions which assign fluid variables to view.

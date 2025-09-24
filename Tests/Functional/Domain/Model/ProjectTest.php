@@ -33,7 +33,7 @@ class ProjectTest extends FunctionalTestCase
         'jweiland/service-bw2',
     ];
 
-    protected array protected array $coreExtensionsToLoad = [
+    protected array $coreExtensionsToLoad = [
         'typo3/cms-scheduler',
     ];
 

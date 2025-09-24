@@ -113,9 +113,8 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
+                'eval' => 'int',
                 'default' => 0,
             ],
             'l10n_mode' => 'exclude',
@@ -125,9 +124,8 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
+                'eval' => 'int',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -149,8 +147,7 @@ return [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_link.link',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
+                'type' => 'link',
                 'size' => 50,
                 'max' => 1024,
                 'eval' => 'trim',
