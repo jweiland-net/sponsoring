@@ -7,6 +7,12 @@
 ChangeLog
 =========
 
+Version 7.0.0
+=============
+
+*   Fixed TYPO3 13 LTS Version compatibility
+*   Remove older version compatibility
+
 Version 5.0.2
 =============
 
