@@ -6,7 +6,7 @@
 [![Monthly Downloads][extension-monthly-downloads]][extension-packagist-url]
 [![TYPO3 13.4][TYPO3-shield]][TYPO3-13-url]
 
-![Build Status](https://github.com/jweiland-net/sponsoring/workflows/CI/badge.svg)
+![Build Status](https://github.com/jweiland-net/sponsoring/actions/workflows/ci.yml/badge.svg)
 
 With `sponsoring` you can create, manage and display projects/promotions like
 f.e. a competition.
