@@ -25,78 +25,43 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class Project extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $name = '';
+    protected string $name = '';
 
-    /**
-     * @var string
-     */
-    protected $number = '';
+    protected string $number = '';
 
-    /**
-     * @var string
-     */
-    protected $contactPerson = '';
+    protected string $contactPerson = '';
 
-    /**
-     * @var string
-     */
-    protected $telephone = '';
+    protected string $telephone = '';
 
-    /**
-     * @var string
-     */
-    protected $email = '';
+    protected string $email = '';
 
-    /**
-     * @var bool
-     */
-    protected $organizerType = false;
+    protected bool $organizerType = false;
 
     /**
      * Organisationseinheit from ext:service_bw2
      * Will be an array after first getter call!
-     *
-     * @var int
      */
-    protected $organisationseinheit = 0;
+    protected int $organisationseinheit = 0;
 
-    /**
-     * @var string
-     */
-    protected $organizerManuell = '';
+    protected string $organizerManuell = '';
 
-    /**
-     * @var \DateTime
-     */
-    protected $applicationDeadline;
+    protected ?\DateTime $applicationDeadline = null;
 
     /**
      * @var ObjectStorage<Category>
      */
-    protected $promotion;
+    protected ObjectStorage $promotion;
 
-    /**
-     * @var string
-     */
-    protected $promotionType = '';
+    protected string $promotionType = '';
 
-    /**
-     * @var string
-     */
-    protected $promotionValue = '';
+    protected string $promotionValue = '';
 
     /**
      * @var ObjectStorage<FileReference>
      */
-    protected $images;
+    protected ObjectStorage $images;
 
-    /**
-     * @var string
-     */
-    protected $description = '';
+    protected string $description = '';
 
     /**
      * @var PoiCollection
@@ -106,12 +71,12 @@ class Project extends AbstractEntity
     /**
      * @var ObjectStorage<FileReference>
      */
-    protected $files;
+    protected ObjectStorage $files;
 
     /**
      * @var ObjectStorage<Link>
      */
-    protected $links;
+    protected ObjectStorage $links;
 
     public function __construct()
     {

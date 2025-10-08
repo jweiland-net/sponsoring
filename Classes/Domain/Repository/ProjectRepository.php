@@ -30,7 +30,7 @@ class ProjectRepository extends Repository
     public function findAllSorted(
         int $promotion,
         string $sortBy = 'name',
-        string $direction = 'ASC'
+        string $direction = 'ASC',
     ): QueryResultInterface {
         $query = $this->createQuery();
         $query->setOrderings([

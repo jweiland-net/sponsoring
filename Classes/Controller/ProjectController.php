@@ -15,6 +15,7 @@ use JWeiland\Sponsoring\Configuration\ExtConf;
 use JWeiland\Sponsoring\Domain\Repository\CategoryRepository;
 use JWeiland\Sponsoring\Domain\Repository\ProjectRepository;
 use JWeiland\Sponsoring\Event\PostProcessFluidVariablesEvent;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -25,35 +26,11 @@ use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
  */
 class ProjectController extends ActionController
 {
-    /**
-     * @var ProjectRepository
-     */
-    protected $projectRepository;
-
-    /**
-     * @var CategoryRepository
-     */
-    protected $categoryRepository;
-
-    /**
-     * @var ExtConf
-     */
-    protected $extConf;
-
-    public function injectProjectRepository(ProjectRepository $projectRepository): void
-    {
-        $this->projectRepository = $projectRepository;
-    }
-
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
-    {
-        $this->categoryRepository = $categoryRepository;
-    }
-
-    public function injectExtConf(ExtConf $extConf): void
-    {
-        $this->extConf = $extConf;
-    }
+    public function __construct(
+        private readonly ProjectRepository $projectRepository,
+        private readonly CategoryRepository $categoryRepository,
+        private readonly ExtConf $extConf,
+    ) {}
 
     public function initializeAction(): void
     {
@@ -69,19 +46,18 @@ class ProjectController extends ActionController
         $view->assign('typo3RequestDir', GeneralUtility::getIndpEnv('TYPO3_REQUEST_DIR'));
     }
 
-    public function listAction(): void
+    public function listAction(): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'projects' => $this->projectRepository->findAll(),
             'promotions' => $this->categoryRepository->findByParent($this->extConf->getRootCategory()),
         ]);
+        return $this->htmlResponse();
     }
 
-    /**
-     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/name|application_deadline|promotion_value/"})
-     * @Extbase\Validate(param="direction", validator="RegularExpression", options={"regularExpression": "/ASC|DESC/"})
-     */
-    public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): void
+    #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/name|application_deadline|promotion_value/']])]
+    #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/ASC|DESC/']])]
+    public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'projects' => $this->projectRepository->findAllSorted($promotion, $sortBy, $direction),
@@ -90,13 +66,15 @@ class ProjectController extends ActionController
             'direction' => $direction,
             'promotions' => $this->categoryRepository->findByParent($this->extConf->getRootCategory()),
         ]);
+        return $this->htmlResponse();
     }
 
-    public function showAction(int $project): void
+    public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+        return $this->htmlResponse();
     }
 
     protected function postProcessAndAssignFluidVariables(array $variables = []): void
@@ -106,8 +84,8 @@ class ProjectController extends ActionController
             new PostProcessFluidVariablesEvent(
                 $this->request,
                 $this->settings,
-                $variables
-            )
+                $variables,
+            ),
         );
 
         $this->view->assignMultiple($event->getFluidVariables());

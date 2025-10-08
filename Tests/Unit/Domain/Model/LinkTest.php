@@ -12,17 +12,15 @@ declare(strict_types=1);
 namespace JWeiland\Sponsoring\Tests\Unit\Domain\Model;
 
 use JWeiland\Sponsoring\Domain\Model\Link;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
+use PHPUnit\Framework\Attributes\Test;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case.
  */
 class LinkTest extends UnitTestCase
 {
-    /**
-     * @var Link
-     */
-    protected $subject;
+    protected Link $subject;
 
     protected function setUp(): void
     {
@@ -34,51 +32,43 @@ class LinkTest extends UnitTestCase
         unset($this->subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLinkInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getLink()
+            $this->subject->getLink(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setLinkSetsLink(): void
     {
         $this->subject->setLink('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getLink()
+            $this->subject->getLink(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTitleInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             'Video',
-            $this->subject->getTitle()
+            $this->subject->getTitle(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setTitleSetsTitle(): void
     {
         $this->subject->setTitle('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getTitle()
+            $this->subject->getTitle(),
         );
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /*
  * This file is part of the package jweiland/sponsoring.
  *
@@ -9,10 +7,8 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-use JWeiland\Sponsoring\Domain\Model\Category;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
-    Category::class => [
-        'tableName' => 'sys_category',
-    ],
+    'ext-sponsoring-wizard-icon' => ['provider' => SvgIconProvider::class, 'source' => 'EXT:sponsoring/Resources/Public/Icons/Extension.svg'],
 ];

@@ -19,11 +19,8 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Category extends AbstractEntity
 {
-    /**
-     * @var string
-     * @Extbase\Validate("NotEmpty")
-     */
-    protected $title = '';
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    protected string $title = '';
 
     public function getTitle(): string
     {

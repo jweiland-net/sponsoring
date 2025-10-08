@@ -1,0 +1,24 @@
+plugin.tx_sponsoring {
+  view {
+    templateRootPaths.100 = {$sponsoring.templateRootPath}
+    partialRootPaths.100 = {$sponsoring.partialRootPath}
+    layoutRootPaths.100 = {$sponsoring.layoutRootPath}
+  }
+
+  persistence {
+    storagePid = {$sponsoring.storagePid}
+  }
+
+  settings {
+    pidOfMaps2Plugin = {$sponsoring.pidOfMaps2Plugin}
+    pidOfDetailPage = {$sponsoring.pidOfDetailPage}
+    pidOfServiceBw2Page = {$sponsoring.pidOfServiceBw2Page}
+    pageBrowser {
+      itemsPerPage = {$sponsoring.pageBrowser.itemsPerPage}
+    }
+  }
+
+  features {
+    requireCHashArgumentForActionArguments = 0
+  }
+}
