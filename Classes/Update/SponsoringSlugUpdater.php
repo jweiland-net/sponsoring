@@ -31,18 +31,10 @@ class SponsoringSlugUpdater implements UpgradeWizardInterface
     protected string $fieldName = 'path_segment';
 
     protected SlugHelper $slugHelper;
+
     public function __construct(
         private readonly ConnectionPool $connectionPool,
     ) {}
-
-    /**
-     * Return the identifier for this wizard
-     * This should be the same string as used in the ext_localconf class registration
-     */
-    public function getIdentifier(): string
-    {
-        return 'sponsoringUpdateSlug';
-    }
 
     public function getTitle(): string
     {
