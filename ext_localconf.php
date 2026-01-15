@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-use JWeiland\Pfprojects\Controller\ProjectController;
+use JWeiland\Sponsoring\Controller\ProjectController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 if (!defined('TYPO3')) {
