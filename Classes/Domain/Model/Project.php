@@ -41,7 +41,7 @@ class Project extends AbstractEntity
      * Organisationseinheit from ext:service_bw2
      * Will be an array after first getter call!
      */
-    protected int $organisationseinheit = 0;
+    protected array|int $organisationseinheit = 0;
 
     protected string $organizerManuell = '';
 
@@ -102,7 +102,7 @@ class Project extends AbstractEntity
         if (MathUtility::canBeInterpretedAsInteger($this->organisationseinheit)) {
             // Do not remove the int cast as $this->organisationseinheit will be filled by _setProperty()
             // Please remove that with introduction of typed properties
-            $this->organisationseinheit = ModelUtility::getOrganisationseinheit((int)$this->organisationseinheit);
+            $this->organisationseinheit = ModelUtility::getOrganisationseinheit($this->organisationseinheit);
         }
 
         return $this->organisationseinheit;
