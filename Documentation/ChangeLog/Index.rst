@@ -7,6 +7,16 @@
 ChangeLog
 =========
 
+Version 7.1.0
+=============
+
+*   [BUGFIX]: Resolved issues with date formatting in TCA definitions.
+*   [BUGFIX]: Added missing configuration fields (pages, recursive) for the Sponsoring plugin to ensure correct backend display.
+*   [BUGFIX]: Corrected invalid Controller Namespaces.
+*   [BUGFIX]: Removed outdated ViewInterface dependency from controllers to align with modern Extbase standards.
+*   [BUGFIX]: Resolved issues within the Pagination class to ensure correct record navigation.
+*   [BUGFIX]: Fixed incorrect property type declarations.
+
 Version 7.0.2
 =============
 

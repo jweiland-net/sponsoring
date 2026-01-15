@@ -19,7 +19,6 @@ use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 
 /**
  * Main controller to list and show projects
@@ -41,7 +40,7 @@ class ProjectController extends ActionController
         }
     }
 
-    public function initializeView(ViewInterface $view): void
+    public function initializeView($view): void
     {
         $view->assign('typo3RequestDir', GeneralUtility::getIndpEnv('TYPO3_REQUEST_DIR'));
     }

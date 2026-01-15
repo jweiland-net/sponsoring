@@ -123,8 +123,6 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
-                'eval' => 'int',
-                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
@@ -134,11 +132,6 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
-                'eval' => 'int',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
-                ],
             ],
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
@@ -235,9 +228,7 @@ return [
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'date',
-                'size' => 7,
-                'eval' => 'date',
-                'checkbox' => 0,
+                'format' => 'date',
                 'default' => '0000-00-00',
             ],
         ],

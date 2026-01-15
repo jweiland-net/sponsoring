@@ -35,13 +35,18 @@ readonly class ExtConf implements SingletonInterface
     {
         $extensionSettings = self::DEFAULT_SETTINGS;
 
+        // overwrite default extension settings with values from EXT_CONF
         try {
             $extensionSettings = array_merge(
                 $extensionSettings,
                 $extensionConfiguration->get(self::EXT_KEY),
             );
-        } catch (ExtensionConfigurationExtensionNotConfiguredException|ExtensionConfigurationPathDoesNotExistException $e) {
+        } catch (ExtensionConfigurationExtensionNotConfiguredException|ExtensionConfigurationPathDoesNotExistException) {
         }
+
+        return new self(
+            rootCategory: (int)($extensionSettings['rootCategory'] ?? 0),
+        );
     }
 
     public function getRootCategory(): int
