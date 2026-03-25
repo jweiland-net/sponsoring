@@ -18,7 +18,6 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository for Category models.
- *
  * @method QueryResultInterface findByParent(int $rootCategory)
  */
 class CategoryRepository extends Repository

@@ -29,7 +29,8 @@ class ProjectController extends ActionController
         private readonly ProjectRepository $projectRepository,
         private readonly CategoryRepository $categoryRepository,
         private readonly ExtConf $extConf,
-    ) {}
+    ) {
+    }
 
     public function initializeAction(): void
     {
@@ -54,8 +55,16 @@ class ProjectController extends ActionController
         return $this->htmlResponse();
     }
 
-    #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/name|application_deadline|promotion_value/']])]
-    #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/ASC|DESC/']])]
+    #[Extbase\Validate([
+        'param' => 'sortBy',
+        'validator' => 'RegularExpression',
+        'options' => ['regularExpression' => '/name|application_deadline|promotion_value/'],
+    ])]
+    #[Extbase\Validate([
+        'param' => 'direction',
+        'validator' => 'RegularExpression',
+        'options' => ['regularExpression' => '/ASC|DESC/'],
+    ])]
     public function searchAction(int $promotion = 0, string $sortBy = 'name', string $direction = 'ASC'): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([

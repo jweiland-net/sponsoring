@@ -273,7 +273,6 @@ return [
         ],
         'description' => [
             'l10n_mode' => 'prefixLangTitle',
-            'l10n_cat' => 'text',
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.description',
             'config' => [
                 'type' => 'text',

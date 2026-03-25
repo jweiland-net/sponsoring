@@ -7,6 +7,12 @@
 ChangeLog
 =========
 
+Version 7.1.1
+=============
+
+*   [TASK] Removed SQL table definitions for Sponsoring module as core handle this by default
+*   [BUGFIX]: Adjusted TCA datetime configurations and removed deprecated properties
+
 Version 7.1.0
 =============
 
