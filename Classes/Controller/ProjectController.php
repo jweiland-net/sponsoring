@@ -29,8 +29,7 @@ class ProjectController extends ActionController
         private readonly ProjectRepository $projectRepository,
         private readonly CategoryRepository $categoryRepository,
         private readonly ExtConf $extConf,
-    ) {
-    }
+    ) {}
 
     public function initializeAction(): void
     {
