@@ -123,6 +123,8 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
+                'format' => 'datetime',
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
@@ -132,6 +134,8 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
+                'format' => 'datetime',
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
@@ -229,7 +233,6 @@ return [
                 'type' => 'datetime',
                 'dbType' => 'date',
                 'format' => 'date',
-                'default' => '0000-00-00',
             ],
         ],
         'promotion_type' => [
@@ -270,7 +273,6 @@ return [
         ],
         'description' => [
             'l10n_mode' => 'prefixLangTitle',
-            'l10n_cat' => 'text',
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.description',
             'config' => [
                 'type' => 'text',
