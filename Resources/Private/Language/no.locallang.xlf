@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="no">
+    <header/>
+    <body>
+      <trans-unit id="tx_sponsoring_domain_model_project">
+        <source>Project</source>
+        <target state="needs-translation">Project</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.name">
+        <source>Name</source>
+        <target state="needs-translation">Name</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.number">
+        <source>Number</source>
+        <target state="needs-translation">Number</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.contact_person">
+        <source>Contact Person</source>
+        <target state="needs-translation">Contact Person</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.telephone">
+        <source>Telephone</source>
+        <target state="needs-translation">Telephone</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.email">
+        <source>Email</source>
+        <target state="needs-translation">Email</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer">
+        <source>Organizer</source>
+        <target state="needs-translation">Organizer</target>
+      </trans-unit>
+      <trans-unit id="tx_pfprojects_domain_model_project.organizer_type">
+        <source>Default: Choose organizer by a record of service_bw2. If checked: You can insert your own organizer with
+					help of a text field. Each click reloads the current form.
+				</source>
+        <target state="needs-translation">Default: Choose organizer by a record of service_bw2. If checked: You can insert your own organizer with
+					help of a text field. Each click reloads the current form.
+				</target>
+      </trans-unit>
+      <trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit">
+        <source>Organizational unit</source>
+        <target state="needs-translation">Organizational unit</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
+        <source>Insert your own organizer.</source>
+        <target state="needs-translation">Insert your own organizer.</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
+        <source>Application Deadline</source>
+        <target state="needs-translation">Application Deadline</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion">
+        <source>Promotion</source>
+        <target state="needs-translation">Promotion</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type">
+        <source>Promotion Type</source>
+        <target state="needs-translation">Promotion Type</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money">
+        <source>Money</source>
+        <target state="needs-translation">Money</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources">
+        <source>Material Resources</source>
+        <target state="needs-translation">Material Resources</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service">
+        <source>Service</source>
+        <target state="needs-translation">Service</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription">
+        <source>See Description</source>
+        <target state="needs-translation">See Description</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_value">
+        <source>Promotion Value</source>
+        <target state="needs-translation">Promotion Value</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.images">
+        <source>Images</source>
+        <target state="needs-translation">Images</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.files">
+        <source>Files</source>
+        <target state="needs-translation">Files</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.links">
+        <source>Links</source>
+        <target state="needs-translation">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.link">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="asc">
+        <source>Ascending</source>
+        <target state="needs-translation">Ascending</target>
+      </trans-unit>
+      <trans-unit id="desc">
+        <source>Descending</source>
+        <target state="needs-translation">Descending</target>
+      </trans-unit>
+      <trans-unit id="sortBy">
+        <source>Sort by</source>
+        <target state="needs-translation">Sort by</target>
+      </trans-unit>
+      <trans-unit id="ordering">
+        <source>Ordering</source>
+        <target state="needs-translation">Ordering</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

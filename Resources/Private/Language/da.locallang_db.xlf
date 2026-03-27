@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="de">
+  <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="da">
     <header/>
     <body>
+      <trans-unit id="plugin.title" approved="yes">
+        <source>Sponsoring</source>
+        <target state="final">Sponsorering</target>
+      </trans-unit>
+      <trans-unit id="plugin.description" approved="yes">
+        <source>Display and manage sponsoring projects like competitions</source>
+        <target state="final">Vis og administrer sponsoreringsprojekter som konkurrencer</target>
+      </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project" approved="yes">
         <source>Project</source>
         <target state="final">Projekt</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.name" approved="yes">
         <source>Name</source>
-        <target state="final">Name</target>
+        <target state="final">Navn</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.path_segment" approved="yes">
+        <source>Segment for URL</source>
+        <target state="final">URL-segment</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.number" approved="yes">
         <source>Number</source>
@@ -17,7 +29,7 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.contact_person" approved="yes">
         <source>Contact Person</source>
-        <target state="final">Ansprechpartner/in</target>
+        <target state="final">Kontaktperson</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.telephone" approved="yes">
         <source>Telephone</source>
@@ -25,69 +37,73 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.email" approved="yes">
         <source>Email</source>
-        <target state="final">E-Mail</target>
+        <target state="final">E-mail</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer" approved="yes">
-        <source>Organizer</source>
-        <target state="final">Veranstalter</target>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type" approved="yes">
+        <source>Switch organizer type</source>
+        <target state="final">Skift arrangørtype</target>
       </trans-unit>
-      <trans-unit id="tx_pfprojects_domain_model_project.organizer_type" approved="yes">
-        <source>Default: Choose organizer by a record of service_bw2. If checked: You can insert your own organizer with
-					help of a text field. Each click reloads the current form.
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description" approved="yes">
+        <source>
+					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
+					In the other case you get a text field to enter an organizer manually.
 				</source>
-        <target state="final">Standard: Wählen Sie einen Veranstalter der service_bw2 Extension. Markiert: Sie erhalten eine Textbox,	um den Veranstalter manuell einzutragen.</target>
+        <target state="final">
+					- hvis deaktiveret, så har du mulighed for at vælge en arrangør fra Service-BW udvidelsen.
+					- i det andet tilfælde får du et tekstfelt for at indtaste en arrangør manuelt.
+				</target>
       </trans-unit>
-      <trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit" approved="yes">
-        <source>Organizational unit</source>
-        <target state="final">Organisationseinheit</target>
+      <trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit" approved="yes">
+        <source>Choose an organizer record of service_bw2.</source>
+        <target state="final">Vælg et arrangør-element fra service_bw2.</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell" approved="yes">
         <source>Insert your own organizer.</source>
-        <target state="final">Tragen Sie den Veranstalter ein.</target>
+        <target state="final">Indsæt din egen organisator.</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.application_deadline" approved="yes">
         <source>Application Deadline</source>
-        <target state="final">Ende der Bewerbungsfrist</target>
+        <target state="final">Tidsfrist for ansøgning</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion" approved="yes">
         <source>Promotion</source>
-        <target state="final">Förderbereich</target>
+        <target state="final">Salgsfremstød</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type" approved="yes">
         <source>Promotion Type</source>
-        <target state="final">Art der Förderung</target>
+        <target state="final">Kampagne type</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money" approved="yes">
         <source>Money</source>
-        <target state="final">Geld</target>
+        <target state="final">Penge</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources" approved="yes">
         <source>Material Resources</source>
-        <target state="final">Sachmittel</target>
+        <target state="final">Materielle ressourcer</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service" approved="yes">
         <source>Service</source>
-        <target state="final">Dienstleistung</target>
+        <target state="final">Tjeneste</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription" approved="yes">
         <source>See Description</source>
-        <target state="final">Siehe Beschreibung</target>
+        <target state="final">Se beskrivelse</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_value" approved="yes">
         <source>Promotion Value</source>
-        <target state="final">Wert der Förderung</target>
+        <target state="final">Salgsfremmende Værdi</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.images" approved="yes">
         <source>Images</source>
-        <target state="final">Bilder</target>
+        <target state="final">Billeder</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.description" approved="yes">
         <source>Description</source>
-        <target state="final">Beschreibung</target>
+        <target state="final">Beskrivelse</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.files" approved="yes">
         <source>Files</source>
-        <target state="final">Dateien</target>
+        <target state="final">Filer</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.links" approved="yes">
         <source>Links</source>
@@ -104,22 +120,6 @@
       <trans-unit id="tx_sponsoring_domain_model_link.link" approved="yes">
         <source>Link</source>
         <target state="final">Link</target>
-      </trans-unit>
-      <trans-unit id="asc" approved="yes">
-        <source>Ascending</source>
-        <target state="final">Aufsteigend</target>
-      </trans-unit>
-      <trans-unit id="desc" approved="yes">
-        <source>Descending</source>
-        <target state="final">Absteigend</target>
-      </trans-unit>
-      <trans-unit id="sortBy" approved="yes">
-        <source>Sort by</source>
-        <target state="final">Filtern nach</target>
-      </trans-unit>
-      <trans-unit id="ordering" approved="yes">
-        <source>Ordering</source>
-        <target state="final">Sortieren nach</target>
       </trans-unit>
     </body>
   </file>

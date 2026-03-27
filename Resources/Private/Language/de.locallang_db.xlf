@@ -1,124 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring">
-		<header/>
-		<body>
-			<trans-unit id="plugin.title">
-				<source>Sponsoring</source>
-				<target>Sponsoring</target>
-			</trans-unit>
-			<trans-unit id="plugin.description">
-				<source>Display and manage sponsoring projects like competitions</source>
-				<target>Anzeige und Verwaltung von Sponsoringprojekten wie Wettbewerben</target>
-			</trans-unit>
-
-			<trans-unit id="tx_sponsoring_domain_model_project">
-				<source>Project</source>
-				<target>Projekt</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.name">
-				<source>Name</source>
-				<target>Name des Projekts</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.path_segment">
-				<source>Segment for URL</source>
-				<target>Abschnitt für URL</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.number">
-				<source>Number</source>
-				<target>Nummer des Projekts</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.contact_person">
-				<source>Contact Person</source>
-				<target>Ansprechpartner/in</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.telephone">
-				<source>Telephone</source>
-				<target>Telefonkontakt</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.email">
-				<source>Email</source>
-				<target>E-Mail Kontakt</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type">
-				<source>Switch organizer type</source>
-				<target>Veranstalter-Typ wechseln</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description">
-				<source>
+  <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="plugin.title" approved="yes">
+        <source>Sponsoring</source>
+        <target state="final">Sponsoring</target>
+      </trans-unit>
+      <trans-unit id="plugin.description" approved="yes">
+        <source>Display and manage sponsoring projects like competitions</source>
+        <target state="final">Sponsoring Projekte wie Wettbewerbe anzeigen und verwalten</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project" approved="yes">
+        <source>Project</source>
+        <target state="final">Projekt</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.name" approved="yes">
+        <source>Name</source>
+        <target state="final">Name</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.path_segment" approved="yes">
+        <source>Segment for URL</source>
+        <target state="final">Segment für URL</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.number" approved="yes">
+        <source>Number</source>
+        <target state="final">Nummer</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.contact_person" approved="yes">
+        <source>Contact Person</source>
+        <target state="final">Ansprechpartner/in</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.telephone" approved="yes">
+        <source>Telephone</source>
+        <target state="final">Telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.email" approved="yes">
+        <source>Email</source>
+        <target state="final">E-Mail</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type" approved="yes">
+        <source>Switch organizer type</source>
+        <target state="final">Organisatortyp wechseln</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description" approved="yes">
+        <source>
 					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
 					In the other case you get a text field to enter an organizer manually.
 				</source>
-				<target>
-					Wenn deaktiviert, dann haben Sie die Möglichkeit einen Veranstalter aus der Service-BW Extension auszuwählen.
-					Im anderen Fall erhalten Sie ein Textfeld, um einen Veranstalter manuell einzutragen.
+        <target state="final">
+					Wenn deaktiviert, haben Sie die Möglichkeit, einen Organisator aus der Service-BW-Erweiterung auszuwählen.
+					Im anderen Fall erhalten Sie ein Textfeld zur manuellen Eingabe eines Organisators.
 				</target>
-			</trans-unit>
-			<trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit">
-				<source>Choose an organizer record of service_bw2.</source>
-				<target>Wählen Sie einen Veranstalter der service_bw2-Extension.</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
-				<source>Application Deadline</source>
-				<target>Ende der Bewerbungsfrist</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion">
-				<source>Promotion</source>
-				<target>Förderbereich</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion_type">
-				<source>Promotion Type</source>
-				<target>Art der Förderung</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money">
-				<source>Money</source>
-				<target>Geld</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources">
-				<source>Material Resources</source>
-				<target>Sachmittel</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service">
-				<source>Service</source>
-				<target>Dienstleistung</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription">
-				<source>See Description</source>
-				<target>Siehe Beschreibung</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.promotion_value">
-				<source>Promotion Value</source>
-				<target>Wert der Förderung</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.images">
-				<source>Images</source>
-				<target>Bilder</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.description">
-				<source>Description</source>
-				<target>Beschreibung des Projekts</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.files">
-				<source>Files</source>
-				<target>Datei(en)</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.links">
-				<source>Links</source>
-				<target>Links</target>
-			</trans-unit>
-
-			<trans-unit id="tx_sponsoring_domain_model_link">
-				<source>Link</source>
-				<target>Link</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_link.title">
-				<source>Title</source>
-				<target>Titel</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_link.link">
-				<source>Link</source>
-				<target>Link</target>
-			</trans-unit>
-		</body>
-	</file>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit" approved="yes">
+        <source>Choose an organizer record of service_bw2.</source>
+        <target state="final">Wählen Sie einen Veranstalter der service_bw2-Extension.</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell" approved="yes">
+        <source>Insert your own organizer.</source>
+        <target state="final">Tragen Sie den Veranstalter ein.</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.application_deadline" approved="yes">
+        <source>Application Deadline</source>
+        <target state="final">Ende der Bewerbungsfrist</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion" approved="yes">
+        <source>Promotion</source>
+        <target state="final">Förderbereich</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type" approved="yes">
+        <source>Promotion Type</source>
+        <target state="final">Art der Förderung</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money" approved="yes">
+        <source>Money</source>
+        <target state="final">Geld</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources" approved="yes">
+        <source>Material Resources</source>
+        <target state="final">Sachmittel</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service" approved="yes">
+        <source>Service</source>
+        <target state="final">Dienstleistung</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription" approved="yes">
+        <source>See Description</source>
+        <target state="final">Siehe Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_value" approved="yes">
+        <source>Promotion Value</source>
+        <target state="final">Wert der Förderung</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.images" approved="yes">
+        <source>Images</source>
+        <target state="final">Bilder</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.description" approved="yes">
+        <source>Description</source>
+        <target state="final">Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.files" approved="yes">
+        <source>Files</source>
+        <target state="final">Dateien</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.links" approved="yes">
+        <source>Links</source>
+        <target state="final">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
