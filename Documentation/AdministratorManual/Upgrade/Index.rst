@@ -10,6 +10,14 @@ Upgrade
 If you update EXT:sponsoring to a newer version, please read this
 section carefully!
 
+Update to Version 7.0.0
+=======================
+
+We have remove the hard dependency to `service_bw2` and all related parts
+in domain model `Project`, TCA and translation files. If you still need these
+implementation you have to add that stuff with help of your site-package
+extension again.
+
 Update to Version 5.0.0
 =======================
 
