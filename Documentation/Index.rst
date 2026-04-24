@@ -48,12 +48,3 @@ Display and manage sponsoring projects like competitions
     KnownProblems/Index
     ChangeLog/Index
     Contribute/Index
-    Links
-
-..  Meta Menu
-
-..  toctree::
-    :hidden:
-
-    Sitemap
-    genindex
