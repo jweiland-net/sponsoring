@@ -27,15 +27,9 @@ return [
         'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.svg',
     ],
     'types' => [
-        '0' => [
-            'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person,
-            --palette--;;telephoneEmail, application_deadline, promotion_type, promotion_value, images, description, files, links,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
-        ],
         '1' => [
             'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person,
-             --palette--;;telephoneEmail, application_deadline, promotion_type, promotion_value, images, description, files, links,
+            --palette--;;telephoneEmail, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
         ],
