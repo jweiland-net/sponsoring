@@ -45,6 +45,5 @@ Display and manage sponsoring projects like competitions
     Installation/Index
     Configuration/Index
     AdministratorManual/Index
-    KnownProblems/Index
     ChangeLog/Index
     Contribute/Index

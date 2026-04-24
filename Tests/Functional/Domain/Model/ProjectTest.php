@@ -30,7 +30,6 @@ class ProjectTest extends FunctionalTestCase
     protected array $testExtensionsToLoad = [
         'jweiland/maps2',
         'jweiland/sponsoring',
-        'jweiland/service-bw2',
     ];
 
     protected array $coreExtensionsToLoad = [
@@ -150,23 +149,6 @@ class ProjectTest extends FunctionalTestCase
         self::assertSame(
             'foo bar',
             $this->subject->getEmail(),
-        );
-    }
-
-    #[Test]
-    public function getOrganizerTypeInitiallyReturnsFalse(): void
-    {
-        self::assertFalse(
-            $this->subject->isOrganizerType(),
-        );
-    }
-
-    #[Test]
-    public function setOrganizerTypeSetsOrganizerType(): void
-    {
-        $this->subject->setOrganizerType(true);
-        self::assertTrue(
-            $this->subject->isOrganizerType(),
         );
     }
 

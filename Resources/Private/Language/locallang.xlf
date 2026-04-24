@@ -24,14 +24,6 @@
 			<trans-unit id="tx_sponsoring_domain_model_project.organizer">
 				<source>Organizer</source>
 			</trans-unit>
-			<trans-unit id="tx_pfprojects_domain_model_project.organizer_type">
-				<source>Default: Choose organizer by a record of service_bw2. If checked: You can insert your own organizer with
-					help of a text field. Each click reloads the current form.
-				</source>
-			</trans-unit>
-			<trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit">
-				<source>Organizational unit</source>
-			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
 				<source>Insert your own organizer.</source>
 			</trans-unit>

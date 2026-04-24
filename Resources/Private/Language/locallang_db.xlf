@@ -31,18 +31,6 @@
 			<trans-unit id="tx_sponsoring_domain_model_project.email">
 				<source>Email</source>
 			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type">
-				<source>Switch organizer type</source>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description">
-				<source>
-					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
-					In the other case you get a text field to enter an organizer manually.
-				</source>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit">
-				<source>Choose an organizer record of service_bw2.</source>
-			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
 				<source>Insert your own organizer.</source>
 			</trans-unit>

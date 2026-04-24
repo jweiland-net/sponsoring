@@ -35,26 +35,7 @@
                         <dd>{project.applicationDeadline -> f:format.date(format: 'd.m.Y')}</dd>
                     </f:if>
 
-                    <f:if condition="{project.organizerType}">
-                        <f:then>
-                            <f:render partial="Project/SingleLine" arguments="{field: 'organizer', value: project.organizerManuell}"/>
-                        </f:then>
-                        <f:else>
-                            <f:if condition="{project.organisationseinheit}">
-                                <dt>{f:translate(key: 'tx_sponsoring_domain_model_project.organizer')}:</dt>
-                                <dd>
-                                    <f:link.action pageUid="{settings.pidOfServiceBw2Page}"
-                                                   action="show"
-                                                   controller="Organisationseinheiten"
-                                                   pluginName="ServiceBw"
-                                                   extensionName="serviceBw2"
-                                                   arguments="{id: project.organisationseinheit.id}">
-                                        {project.organisationseinheit.name}
-                                    </f:link.action>
-                                </dd>
-                            </f:if>
-                        </f:else>
-                    </f:if>
+                    <f:render partial="Project/SingleLine" arguments="{field: 'organizer', value: project.organizerManuell}"/>
                 </dl>
 
                 <dl class="extdl clearfix rulerafter">

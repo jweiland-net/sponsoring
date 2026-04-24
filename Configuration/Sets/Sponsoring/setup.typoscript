@@ -12,7 +12,6 @@ plugin.tx_sponsoring {
   settings {
     pidOfMaps2Plugin = {$sponsoring.pidOfMaps2Plugin}
     pidOfDetailPage = {$sponsoring.pidOfDetailPage}
-    pidOfServiceBw2Page = {$sponsoring.pidOfServiceBw2Page}
     pageBrowser {
       itemsPerPage = {$sponsoring.pageBrowser.itemsPerPage}
     }
