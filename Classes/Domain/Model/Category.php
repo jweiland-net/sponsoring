@@ -15,7 +15,7 @@ use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * This model represents a category (for anything).
+ * This model represents a category
  */
 class Category extends AbstractEntity
 {

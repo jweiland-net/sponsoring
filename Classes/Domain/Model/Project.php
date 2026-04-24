@@ -12,9 +12,7 @@ declare(strict_types=1);
 namespace JWeiland\Sponsoring\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
-use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -35,15 +33,7 @@ class Project extends AbstractEntity
 
     protected string $email = '';
 
-    protected bool $organizerType = false;
-
-    /**
-     * Organisationseinheit from ext:service_bw2
-     * Will be an array after first getter call!
-     */
-    protected array|int $organisationseinheit = 0;
-
-    protected string $organizerManuell = '';
+    protected string $organizer = '';
 
     protected ?\DateTime $applicationDeadline = null;
 
@@ -97,37 +87,6 @@ class Project extends AbstractEntity
         $this->links = $this->links ?? new ObjectStorage();
     }
 
-    public function getOrganisationseinheit(): array
-    {
-        if (MathUtility::canBeInterpretedAsInteger($this->organisationseinheit)) {
-            // Do not remove the int cast as $this->organisationseinheit will be filled by _setProperty()
-            // Please remove that with introduction of typed properties
-            $this->organisationseinheit = ModelUtility::getOrganisationseinheit($this->organisationseinheit);
-        }
-
-        return $this->organisationseinheit;
-    }
-
-    public function setOrganisationseinheit(array $organisationseinheit): void
-    {
-        $this->organisationseinheit = $organisationseinheit;
-    }
-
-    /**
-     * Get Organizer
-     * It can handle both kinds of organizer
-     * Useful for Fluid Templates
-     */
-    public function getOrganizer(): string
-    {
-        if ($this->organizerType) {
-            // Get manually given organizer
-            return $this->getOrganizerManuell();
-        }
-
-        return $this->getOrganisationseinheit()['name'] ?? '';
-    }
-
     public function getName(): string
     {
         return $this->name;
@@ -178,24 +137,14 @@ class Project extends AbstractEntity
         $this->email = $email;
     }
 
-    public function isOrganizerType(): bool
+    public function getOrganizer(): string
     {
-        return $this->organizerType;
+        return $this->organizer;
     }
 
-    public function setOrganizerType(bool $organizerType): void
+    public function setOrganizer(string $organizer): void
     {
-        $this->organizerType = $organizerType;
-    }
-
-    public function getOrganizerManuell(): string
-    {
-        return $this->organizerManuell;
-    }
-
-    public function setOrganizerManuell(string $organizerManuell): void
-    {
-        $this->organizerManuell = $organizerManuell;
+        $this->organizer = $organizer;
     }
 
     public function getApplicationDeadline(): ?\DateTime

@@ -40,24 +40,6 @@
 				<source>Email</source>
 				<target>E-Mail Kontakt</target>
 			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type">
-				<source>Switch organizer type</source>
-				<target>Veranstalter-Typ wechseln</target>
-			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description">
-				<source>
-					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
-					In the other case you get a text field to enter an organizer manually.
-				</source>
-				<target>
-					Wenn deaktiviert, dann haben Sie die Möglichkeit einen Veranstalter aus der Service-BW Extension auszuwählen.
-					Im anderen Fall erhalten Sie ein Textfeld, um einen Veranstalter manuell einzutragen.
-				</target>
-			</trans-unit>
-			<trans-unit id="tx_pfprojects_domain_model_project.organisationseinheit">
-				<source>Choose an organizer record of service_bw2.</source>
-				<target>Wählen Sie einen Veranstalter der service_bw2-Extension.</target>
-			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
 				<source>Application Deadline</source>
 				<target>Ende der Bewerbungsfrist</target>
