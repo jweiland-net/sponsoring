@@ -10,7 +10,7 @@ Upgrade
 If you update EXT:sponsoring to a newer version, please read this
 section carefully!
 
-Update to Version 7.0.0
+Update to Version 8.0.0
 =======================
 
 We have remove the hard dependency to `service_bw2` and all related parts
