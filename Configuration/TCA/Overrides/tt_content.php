@@ -7,7 +7,6 @@
  * LICENSE file that was distributed with this source code.
  */
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 if (!defined('TYPO3')) {
@@ -17,12 +16,8 @@ if (!defined('TYPO3')) {
 ExtensionUtility::registerPlugin(
     'Sponsoring',
     'Sponsoring',
-    'Sponsoring',
-);
-
-ExtensionManagementUtility::addToAllTCAtypes(
-    'tt_content',
-    '--div--;Configuration, pages;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:pages.ALT.list_formlabel,recursive',
-    'sponsoring_sponsoring',
-    'after:subheader',
+    'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:plugin.title',
+    'ext-sponsoring-wizard-icon',
+    'plugins',
+    'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:plugin.description',
 );
