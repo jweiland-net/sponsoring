@@ -201,7 +201,7 @@ return [
                 'type' => 'file',
                 'minitems' => 0,
                 'maxitems' => 10,
-                'allowed' => 'common-image-types',
+                'allowed' => 'pdf',
             ],
         ],
         'links' => [
