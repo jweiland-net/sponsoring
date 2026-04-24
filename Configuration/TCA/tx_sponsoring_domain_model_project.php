@@ -112,7 +112,7 @@ return [
         ],
         'organizer_manuell' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_manuell',
+            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer',
             'config' => [
                 'type' => 'input',
                 'size' => 30,

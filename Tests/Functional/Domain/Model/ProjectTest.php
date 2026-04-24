@@ -153,22 +153,22 @@ class ProjectTest extends FunctionalTestCase
     }
 
     #[Test]
-    public function getOrganizerManuellInitiallyReturnsEmptyString(): void
+    public function getOrganizerInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getOrganizerManuell(),
+            $this->subject->getOrganizer(),
         );
     }
 
     #[Test]
-    public function setOrganizerManuellSetsOrganizerManuell(): void
+    public function setOrganizerSetsOrganizer(): void
     {
-        $this->subject->setOrganizerManuell('foo bar');
+        $this->subject->setOrganizer('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getOrganizerManuell(),
+            $this->subject->getOrganizer(),
         );
     }
 

@@ -24,9 +24,6 @@
 			<trans-unit id="tx_sponsoring_domain_model_project.organizer">
 				<source>Organizer</source>
 			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
-				<source>Insert your own organizer.</source>
-			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
 				<source>Application Deadline</source>
 			</trans-unit>

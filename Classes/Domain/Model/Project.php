@@ -33,7 +33,7 @@ class Project extends AbstractEntity
 
     protected string $email = '';
 
-    protected string $organizerManuell = '';
+    protected string $organizer = '';
 
     protected ?\DateTime $applicationDeadline = null;
 
@@ -137,14 +137,14 @@ class Project extends AbstractEntity
         $this->email = $email;
     }
 
-    public function getOrganizerManuell(): string
+    public function getOrganizer(): string
     {
-        return $this->organizerManuell;
+        return $this->organizer;
     }
 
-    public function setOrganizerManuell(string $organizerManuell): void
+    public function setOrganizer(string $organizer): void
     {
-        $this->organizerManuell = $organizerManuell;
+        $this->organizer = $organizer;
     }
 
     public function getApplicationDeadline(): ?\DateTime

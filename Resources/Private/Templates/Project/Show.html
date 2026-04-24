@@ -35,7 +35,7 @@
                         <dd>{project.applicationDeadline -> f:format.date(format: 'd.m.Y')}</dd>
                     </f:if>
 
-                    <f:render partial="Project/SingleLine" arguments="{field: 'organizer', value: project.organizerManuell}"/>
+                    <f:render partial="Project/SingleLine" arguments="{field: 'organizer', value: project.organizer}"/>
                 </dl>
 
                 <dl class="extdl clearfix rulerafter">

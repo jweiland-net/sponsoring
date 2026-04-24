@@ -31,10 +31,6 @@
 				<source>Organizer</source>
 				<target>Veranstalter</target>
 			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
-				<source>Insert your own organizer.</source>
-				<target>Tragen Sie den Veranstalter ein.</target>
-			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
 				<source>Application Deadline</source>
 				<target>Ende der Bewerbungsfrist</target>

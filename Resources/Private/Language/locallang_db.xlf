@@ -31,7 +31,7 @@
 			<trans-unit id="tx_sponsoring_domain_model_project.email">
 				<source>Email</source>
 			</trans-unit>
-			<trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
+			<trans-unit id="tx_sponsoring_domain_model_project.organizer">
 				<source>Insert your own organizer.</source>
 			</trans-unit>
 			<trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
