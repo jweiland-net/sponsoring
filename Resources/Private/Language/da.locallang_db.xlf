@@ -39,27 +39,9 @@
         <source>Email</source>
         <target state="final">E-mail</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type" approved="yes">
-        <source>Switch organizer type</source>
-        <target state="final">Skift arrangørtype</target>
-      </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description" approved="yes">
-        <source>
-					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
-					In the other case you get a text field to enter an organizer manually.
-				</source>
-        <target state="final">
-					- hvis deaktiveret, så har du mulighed for at vælge en arrangør fra Service-BW udvidelsen.
-					- i det andet tilfælde får du et tekstfelt for at indtaste en arrangør manuelt.
-				</target>
-      </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit" approved="yes">
-        <source>Choose an organizer record of service_bw2.</source>
-        <target state="final">Vælg et arrangør-element fra service_bw2.</target>
-      </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell" approved="yes">
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer">
         <source>Insert your own organizer.</source>
-        <target state="final">Indsæt din egen organisator.</target>
+        <target state="needs-translation">Insert your own organizer.</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.application_deadline" approved="yes">
         <source>Application Deadline</source>
