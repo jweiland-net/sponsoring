@@ -39,25 +39,7 @@
         <source>Email</source>
         <target state="needs-translation">Email</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type">
-        <source>Switch organizer type</source>
-        <target state="needs-translation">Switch organizer type</target>
-      </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_type.description">
-        <source>
-					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
-					In the other case you get a text field to enter an organizer manually.
-				</source>
-        <target state="needs-translation">
-					If deactivated, then you have the possibility to select an organizer from the Service-BW Extension.
-					In the other case you get a text field to enter an organizer manually.
-				</target>
-      </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organisationseinheit">
-        <source>Choose an organizer record of service_bw2.</source>
-        <target state="needs-translation">Choose an organizer record of service_bw2.</target>
-      </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer_manuell">
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer">
         <source>Insert your own organizer.</source>
         <target state="needs-translation">Insert your own organizer.</target>
       </trans-unit>
