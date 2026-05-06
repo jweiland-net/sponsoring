@@ -15,15 +15,10 @@ f.e. a competition.
 
 * Create projects with its ID, description and contact person
 * Assign an Organizer to a project
-  * Organizer can be a simple text-field
-  * You can choose an organizer out of Service BW API (EXT:service_bw2)
 * Assign project to a promotion which is based on sys_category in TYPO3
 * Add one or more images
 * Choose from one of the default promotion types like `Money` and `Service`
   and add it to promotion value.
-
-Currently `sponsoring` has a hard-coded dependency to EXT:service_bw2. That's why
-it will only work for BW in germany.
 
 ## 2 Usage
 
@@ -39,8 +34,7 @@ Run the following command within your Composer based TYPO3 project:
 composer require jweiland/sponsoring
 ```
 
-This will also install `jweiland/maps2` and `jweiland/service-bw2` as dependencies
-into your TYPO3 system.
+This will also install `jweiland/maps2` as dependencies into your TYPO3 system.
 
 #### Installation as extension from TYPO3 Extension Repository (TER)
 

@@ -73,6 +73,7 @@ class ProjectController extends ActionController
             'direction' => $direction,
             'promotions' => $this->categoryRepository->findByParent($this->extConf->getRootCategory()),
         ]);
+
         return $this->htmlResponse();
     }
 
@@ -81,6 +82,7 @@ class ProjectController extends ActionController
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+
         return $this->htmlResponse();
     }
 

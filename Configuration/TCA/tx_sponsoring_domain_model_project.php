@@ -7,15 +7,12 @@
  * LICENSE file that was distributed with this source code.
  */
 
-use JWeiland\ServiceBw2\Utility\TCAUtility;
-
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'type' => 'organizer_type',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -26,19 +23,13 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name,number,contact_person,telephone,email,organizer,promotion_value,description,',
+        'searchFields' => 'name,number,contact_person,telephone,email,promotion_value,description,',
         'iconfile' => 'EXT:sponsoring/Resources/Public/Icons/tx_sponsoring_domain_model_project.svg',
     ],
     'types' => [
-        '0' => [
-            'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person,
-            --palette--;;telephoneEmail, organizer_type, organisationseinheit, application_deadline, promotion_type, promotion_value, images, description, files, links,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
-        ],
         '1' => [
             'showitem' => '--palette--;;languageHidden, --palette--;;nameNumber, path_segment, contact_person,
-             --palette--;;telephoneEmail, organizer_type, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
+            --palette--;;telephoneEmail, organizer_manuell, application_deadline, promotion_type, promotion_value, images, description, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
         ],
@@ -52,94 +43,6 @@ return [
         ],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language'],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    [
-                        'label' => '',
-                        'value' => 0,
-                    ],
-                ],
-                'foreign_table' => 'tx_sponsoring_domain_model_project',
-                'foreign_table_where' => 'AND tx_sponsoring_domain_model_project.pid=###CURRENT_PID### AND tx_sponsoring_domain_model_project.sys_language_uid IN (-1,0)',
-                'default' => 0,
-            ],
-        ],
-        'l10n_source' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'hidden' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        'label' => '',
-                        1 => '',
-                        'invertStateDisplay' => true,
-                    ],
-                ],
-            ],
-        ],
-        'cruser_id' => [
-            'label' => 'cruser_id',
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'pid' => [
-            'label' => 'pid',
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'crdate' => [
-            'label' => 'crdate',
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'tstamp' => [
-            'label' => 'tstamp',
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'starttime' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-            'config' => [
-                'type' => 'datetime',
-                'format' => 'datetime',
-                'default' => 0,
-            ],
-            'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly',
-        ],
-        'endtime' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'config' => [
-                'type' => 'datetime',
-                'format' => 'datetime',
-                'default' => 0,
-            ],
-            'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly',
-        ],
         'name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.name',
@@ -201,25 +104,9 @@ return [
             'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.email',
             'config' => ['type' => 'email'],
         ],
-        'organizer_type' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_type',
-            'description' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_type.description',
-            'config' => [
-                'type' => 'check',
-                'default' => 0,
-            ],
-        ],
-        'organisationseinheit' => [
-            'displayCond' => 'FIELD:organizer_type:=:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organisationseinheit',
-            'config' => TCAUtility::getOrganisationseinheitenFieldTCAConfig(['maxitems' => 1]),
-        ],
         'organizer_manuell' => [
-            'displayCond' => 'FIELD:organizer_type:=:1',
             'exclude' => 1,
-            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer_manuell',
+            'label' => 'LLL:EXT:sponsoring/Resources/Private/Language/locallang_db.xlf:tx_sponsoring_domain_model_project.organizer',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -289,7 +176,7 @@ return [
                 'type' => 'file',
                 'minitems' => 0,
                 'maxitems' => 10,
-                'allowed' => 'common-image-types',
+                'allowed' => 'pdf',
             ],
         ],
         'links' => [

@@ -7,6 +7,24 @@
 ChangeLog
 =========
 
+Version 8.0.0
+=============
+
+*   [TASK] Add Project model persistence configuration
+*   [TASK] Rename and simplify organizer field in project model
+*   [TASK] Remove hard dependency on EXT:service_bw2
+*   [TASK] Update allowed file types in TCA configuration
+*   [TASK] Remove redundant TCA columns from configuration
+*   [TASK] Simplify plugin registration in ext_localconf.php
+*   [TASK] Add missing newline in ext_conf_template.txt
+*   [TASK] Update comment in .gitignore file
+*   [TASK] Remove unused and redundant documentation files
+*   [TASK] Correct inconsistent HTML indentation in templates
+*   [TASK] Adjust XML formatting in language files
+*   [TASK] Refactor plugin registration and configuration
+*   [TASK] Apply code style improvements
+*   [TASK] Update and optimize code quality tools
+
 Version 7.1.1
 =============
 

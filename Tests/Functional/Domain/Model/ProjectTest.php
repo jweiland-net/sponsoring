@@ -30,11 +30,6 @@ class ProjectTest extends FunctionalTestCase
     protected array $testExtensionsToLoad = [
         'jweiland/maps2',
         'jweiland/sponsoring',
-        'jweiland/service-bw2',
-    ];
-
-    protected array $coreExtensionsToLoad = [
-        'typo3/cms-scheduler',
     ];
 
     protected function setUp(): void
@@ -154,39 +149,22 @@ class ProjectTest extends FunctionalTestCase
     }
 
     #[Test]
-    public function getOrganizerTypeInitiallyReturnsFalse(): void
-    {
-        self::assertFalse(
-            $this->subject->isOrganizerType(),
-        );
-    }
-
-    #[Test]
-    public function setOrganizerTypeSetsOrganizerType(): void
-    {
-        $this->subject->setOrganizerType(true);
-        self::assertTrue(
-            $this->subject->isOrganizerType(),
-        );
-    }
-
-    #[Test]
-    public function getOrganizerManuellInitiallyReturnsEmptyString(): void
+    public function getOrganizerInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getOrganizerManuell(),
+            $this->subject->getOrganizer(),
         );
     }
 
     #[Test]
-    public function setOrganizerManuellSetsOrganizerManuell(): void
+    public function setOrganizerSetsOrganizer(): void
     {
-        $this->subject->setOrganizerManuell('foo bar');
+        $this->subject->setOrganizer('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getOrganizerManuell(),
+            $this->subject->getOrganizer(),
         );
     }
 

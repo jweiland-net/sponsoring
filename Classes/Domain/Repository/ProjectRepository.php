@@ -21,11 +21,6 @@ class ProjectRepository extends Repository
 {
     /**
      * Find all project records sorted by given parameters
-     *
-     * @param int $promotion
-     * @param string $sortBy
-     * @param string $direction
-     * @return QueryResultInterface
      */
     public function findAllSorted(
         int $promotion,
@@ -44,9 +39,10 @@ class ProjectRepository extends Repository
             $constraints = $query->contains('promotion', $promotion);
         }
 
-        if (empty($constraints)) {
+        if ($constraints === []) {
             return $query->execute();
         }
+
         return $query->matching($constraints)->execute();
     }
 }

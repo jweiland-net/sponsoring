@@ -56,8 +56,9 @@ You can override our Layouts with your own SitePackage extension. We prefer to c
 persistence.storagePid
 ----------------------
 
-Set this value to a Storage Folder (PID) where you have stored the project records. If you have stored Organizers and
-Locations in another Storage Folder, you have to add theses PIDs here, to.
+Set this value to a Storage Folder (PID) where you have stored the project
+records. If you have stored Organizers and Locations in another Storage
+Folder, you have to add theses PIDs here, too.
 
 Example: 21,45,3234
 
@@ -66,8 +67,8 @@ settings.pidOfMaps2Plugin
 
 Default: empty
 
-Set this value to the pid where maps2 plugin is located. A link for the address will be redirected
-to that page.
+Set this value to the pid where maps2 plugin is located. A link for the
+address will be redirected to that page.
 
 setting.pidOfDetailPage
 ------------------------
@@ -75,15 +76,6 @@ setting.pidOfDetailPage
 Default: 0
 
 Often it is useful to move the detail view onto a separate page for design/layout reasons.
-
-settings.pidOfServiceBwPage
----------------------------
-
-Default: 0
-
-As you can assign an organizer of Service BW API to a project, you can use this property to link such
-organizers to a page where Service BW Plugin was inserted to show the organizer with its
-data from API directly.
 
 settings.pageBrowser.*
 ----------------------

@@ -10,9 +10,17 @@ declare(strict_types=1);
  */
 
 use JWeiland\Sponsoring\Domain\Model\Category;
+use JWeiland\Sponsoring\Domain\Model\Project;
 
 return [
     Category::class => [
         'tableName' => 'sys_category',
+    ],
+    Project::class => [
+        'properties' => [
+            'organizer' => [
+                'fieldName' => 'organizer_manuell',
+            ],
+        ],
     ],
 ];

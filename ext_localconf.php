@@ -14,17 +14,14 @@ if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
-call_user_func(static function () {
-    ExtensionUtility::configurePlugin(
-        'Sponsoring',
-        'Sponsoring',
-        [
-            ProjectController::class => 'list, search, show',
-        ],
-        // non-cacheable actions
-        [
-            ProjectController::class => 'search',
-        ],
-        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
-    );
-});
+ExtensionUtility::configurePlugin(
+    'Sponsoring',
+    'Sponsoring',
+    [
+        ProjectController::class => 'list, search, show',
+    ],
+    [
+        ProjectController::class => 'search',
+    ],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+);

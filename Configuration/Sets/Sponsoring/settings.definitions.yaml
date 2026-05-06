@@ -47,12 +47,6 @@ settings:
     description: 'Page UID of Detail Page'
     type: int
     default: 0
-  sponsoring.pidOfServiceBw2Page:
-    label: 'Pid of ServiceBw2 Page'
-    category: 'sponsoring.pages'
-    description: 'Page UID with ServiceBw2 records'
-    type: int
-    default: 0
   sponsoring.pageBrowser.itemsPerPage:
     label: 'Items per page for pagination'
     category: 'sponsoring.settings'
