@@ -39,9 +39,9 @@
         <source>Email</source>
         <target state="final">E-mail</target>
       </trans-unit>
-      <trans-unit id="tx_sponsoring_domain_model_project.organizer">
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer" approved="yes">
         <source>Insert your own organizer.</source>
-        <target state="needs-translation">Insert your own organizer.</target>
+        <target state="final">Indsæt din egen organisator.</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.application_deadline" approved="yes">
         <source>Application Deadline</source>
