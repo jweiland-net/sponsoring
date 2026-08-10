@@ -13,11 +13,11 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project">
         <source>Project</source>
-        <target state="needs-translation">Project</target>
+        <target state="translated">Projekt</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.name">
         <source>Name</source>
-        <target state="needs-translation">Name</target>
+        <target state="translated">Név</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.path_segment">
         <source>Segment for URL</source>
@@ -25,19 +25,19 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.number">
         <source>Number</source>
-        <target state="needs-translation">Number</target>
+        <target state="translated">Szám</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.contact_person">
         <source>Contact Person</source>
-        <target state="needs-translation">Contact Person</target>
+        <target state="translated">Kapcsolattartó</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.telephone">
         <source>Telephone</source>
-        <target state="needs-translation">Telephone</target>
+        <target state="translated">Telefon</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.email">
         <source>Email</source>
-        <target state="needs-translation">Email</target>
+        <target state="translated">E-mail</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.organizer">
         <source>Insert your own organizer.</source>
@@ -45,39 +45,39 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
         <source>Application Deadline</source>
-        <target state="needs-translation">Application Deadline</target>
+        <target state="translated">Jelentkezési határidő</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion">
         <source>Promotion</source>
-        <target state="needs-translation">Promotion</target>
+        <target state="translated">Támogatás</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type">
         <source>Promotion Type</source>
-        <target state="needs-translation">Promotion Type</target>
+        <target state="translated">Támogatás típusa</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money">
         <source>Money</source>
-        <target state="needs-translation">Money</target>
+        <target state="translated">Pénz</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources">
         <source>Material Resources</source>
-        <target state="needs-translation">Material Resources</target>
+        <target state="translated">Tárgyi erőforrások</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service">
         <source>Service</source>
-        <target state="needs-translation">Service</target>
+        <target state="translated">Szolgáltatás</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription">
         <source>See Description</source>
-        <target state="needs-translation">See Description</target>
+        <target state="translated">Lásd a leírást</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.promotion_value">
         <source>Promotion Value</source>
-        <target state="needs-translation">Promotion Value</target>
+        <target state="translated">Támogatás értéke</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.images">
         <source>Images</source>
-        <target state="needs-translation">Images</target>
+        <target state="translated">Képek</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.description">
         <source>Description</source>
