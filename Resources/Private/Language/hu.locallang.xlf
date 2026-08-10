@@ -69,43 +69,43 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.description">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="translated">Leírás</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.files">
         <source>Files</source>
-        <target state="needs-translation">Files</target>
+        <target state="translated">Fájlok</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.links">
         <source>Links</source>
-        <target state="needs-translation">Links</target>
+        <target state="translated">Hivatkozások</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_link.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="translated">Cím</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_link.link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
       <trans-unit id="asc">
         <source>Ascending</source>
-        <target state="needs-translation">Ascending</target>
+        <target state="translated">Növekvő</target>
       </trans-unit>
       <trans-unit id="desc">
         <source>Descending</source>
-        <target state="needs-translation">Descending</target>
+        <target state="translated">Csökkenő</target>
       </trans-unit>
       <trans-unit id="sortBy">
         <source>Sort by</source>
-        <target state="needs-translation">Sort by</target>
+        <target state="translated">Rendezés</target>
       </trans-unit>
       <trans-unit id="ordering">
         <source>Ordering</source>
-        <target state="needs-translation">Ordering</target>
+        <target state="translated">Sorrend</target>
       </trans-unit>
     </body>
   </file>
