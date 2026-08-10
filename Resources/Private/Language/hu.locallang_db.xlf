@@ -5,11 +5,11 @@
     <body>
       <trans-unit id="plugin.title">
         <source>Sponsoring</source>
-        <target state="needs-translation">Sponsoring</target>
+        <target state="translated">Szponzorálás</target>
       </trans-unit>
       <trans-unit id="plugin.description">
         <source>Display and manage sponsoring projects like competitions</source>
-        <target state="needs-translation">Display and manage sponsoring projects like competitions</target>
+        <target state="translated">Szponzorációs projektek megjelenítése és kezelése, például versenyeké</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project">
         <source>Project</source>
@@ -21,7 +21,7 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.path_segment">
         <source>Segment for URL</source>
-        <target state="needs-translation">Segment for URL</target>
+        <target state="translated">URL-szegmens</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.number">
         <source>Number</source>
@@ -41,7 +41,7 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.organizer">
         <source>Insert your own organizer.</source>
-        <target state="needs-translation">Insert your own organizer.</target>
+        <target state="translated">Adja meg saját szervezőjét.</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
         <source>Application Deadline</source>
@@ -81,27 +81,27 @@
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.description">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="translated">Leírás</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.files">
         <source>Files</source>
-        <target state="needs-translation">Files</target>
+        <target state="translated">Fájlok</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_project.links">
         <source>Links</source>
-        <target state="needs-translation">Links</target>
+        <target state="translated">Hivatkozások</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_link.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="translated">Cím</target>
       </trans-unit>
       <trans-unit id="tx_sponsoring_domain_model_link.link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
     </body>
   </file>
