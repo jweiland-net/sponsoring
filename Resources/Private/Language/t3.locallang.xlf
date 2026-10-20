@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2015-11-19T12:08:26Z" product-name="sponsoring" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="tx_sponsoring_domain_model_project">
+        <source>Project</source>
+        <target>crwdns309998:0crwdne309998:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.name">
+        <source>Name</source>
+        <target>crwdns310000:0crwdne310000:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.number">
+        <source>Number</source>
+        <target>crwdns310002:0crwdne310002:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.contact_person">
+        <source>Contact Person</source>
+        <target>crwdns310004:0crwdne310004:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.telephone">
+        <source>Telephone</source>
+        <target>crwdns310006:0crwdne310006:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.email">
+        <source>Email</source>
+        <target>crwdns310008:0crwdne310008:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.organizer">
+        <source>Organizer</source>
+        <target>crwdns310010:0crwdne310010:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.application_deadline">
+        <source>Application Deadline</source>
+        <target>crwdns310018:0crwdne310018:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion">
+        <source>Promotion</source>
+        <target>crwdns310020:0crwdne310020:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type">
+        <source>Promotion Type</source>
+        <target>crwdns310022:0crwdne310022:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.money">
+        <source>Money</source>
+        <target>crwdns310024:0crwdne310024:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.materialResources">
+        <source>Material Resources</source>
+        <target>crwdns310026:0crwdne310026:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.service">
+        <source>Service</source>
+        <target>crwdns310028:0crwdne310028:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_type.seeDescription">
+        <source>See Description</source>
+        <target>crwdns310030:0crwdne310030:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.promotion_value">
+        <source>Promotion Value</source>
+        <target>crwdns310032:0crwdne310032:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.images">
+        <source>Images</source>
+        <target>crwdns310034:0crwdne310034:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.description">
+        <source>Description</source>
+        <target>crwdns310036:0crwdne310036:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.files">
+        <source>Files</source>
+        <target>crwdns310038:0crwdne310038:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_project.links">
+        <source>Links</source>
+        <target>crwdns310040:0crwdne310040:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link">
+        <source>Link</source>
+        <target>crwdns310042:0crwdne310042:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.title">
+        <source>Title</source>
+        <target>crwdns310044:0crwdne310044:0</target>
+      </trans-unit>
+      <trans-unit id="tx_sponsoring_domain_model_link.link">
+        <source>Link</source>
+        <target>crwdns310046:0crwdne310046:0</target>
+      </trans-unit>
+      <trans-unit id="asc">
+        <source>Ascending</source>
+        <target>crwdns310048:0crwdne310048:0</target>
+      </trans-unit>
+      <trans-unit id="desc">
+        <source>Descending</source>
+        <target>crwdns310050:0crwdne310050:0</target>
+      </trans-unit>
+      <trans-unit id="sortBy">
+        <source>Sort by</source>
+        <target>crwdns310052:0crwdne310052:0</target>
+      </trans-unit>
+      <trans-unit id="ordering">
+        <source>Ordering</source>
+        <target>crwdns310054:0crwdne310054:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
